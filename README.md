@@ -1,1 +1,2 @@
-# OverleafCopilot.github.io
+# OverleafCopilot
+Comprehensive scholar writing copilot for Overleaf.
