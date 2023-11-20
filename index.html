@@ -27,7 +27,8 @@
         </div>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-2">
             <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" id="download-btn"
-                onClick="javascript:window.open('./overleaf-copilot.zip', '_blank');">
+                onClick="javascript:window.open('./overleaf-copilot.zip', '_blank');"
+                data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="pre-0.4.4">
                 <i class="bi bi-download pe-2"></i>Download
             </button>
             <button type="button" class="btn btn-outline-secondary btn-lg px-4" id="readme-btn"
@@ -109,3 +110,7 @@
         </div>
     </div>
 </body>
+
+<script>
+    const download_tooltip = new bootstrap.Tooltip($('#download-btn'));
+</script>
