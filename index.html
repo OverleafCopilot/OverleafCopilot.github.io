@@ -10,6 +10,9 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+        integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
+        async></script>
     <title>Overleaf Copilot - Scholar writing copilot for Overleaf</title>
 </head>
 
@@ -31,79 +34,89 @@
                 data-bs-title="Compatible with Chrome, Edge, Opera, Arc and other Chromium-based Browsers">
                 <i class="bi bi-browser-chrome pe-2"></i>Add to browser
             </button>
-            <button type="button" class="btn btn-outline-primary btn-lg px-4" onClick="javascript:window.open('./premium-license.html', '_blank');">
+            <button type="button" class="btn btn-outline-primary btn-lg px-4"
+                onClick="javascript:window.open('./premium-license.html', '_blank');">
                 <i class="bi bi-stars pe-2"></i>Premium License</button>
         </div>
         <div class="col-lg-10 mx-auto mt-5">
-            <video class="shadow" width="100%" src="demonstration.mp4" type="video/mp4" controls></video>
+            <video class="shadow" width="100%" src="demonstration.webm" type="video/mp4" controls></video>
         </div>
     </div>
-    <div class="col-xl-8 mx-auto">
-        <div class="card my-5 shadow">
-            <div class="row g-0">
-                <div class="col-md-6">
-                    <img src="index_asset/rewriter.png" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-6">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            Rewriter, polish selected contents with one click of a button.
-                        </h5>
-                        <div class="card-text">
-                            <p>
-                                No more search for paper polishing prompts.
-                                No more constantly jump between ChatGPT and Overleaf.
-                            </p>
-                            <p>
-                                Built-in high-quality prompts and integration with Overleaf, optimize your academic
-                                workflow.
-                            </p>
-                        </div>
+    <div class="col-xl-10 mx-auto row row-cols-1 row-cols-md-2 my-2 gy-4" data-masonry='{"percentPosition": true }'>
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="index_asset/proxy.webp" class="card-img-top img-fluid rounded-start" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        OpenAI Proxy, hassle-free access to GPT-3.5 and GPT-4.
+                    </h5>
+                    <div class="card-text">
+                        <p>
+                            No need for acquiring an OpenAI API Key.
+                            No need to understand the complex technical details of OpenAI API.
+                        </p>
+                        <p>
+                            Easy and straight-forward access to OpenAI models.
+                            Free-trial included!
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card mb-5 shadow">
-            <div class="row g-0">
-                <div class="col-md-6">
-                    <img src="index_asset/translator.png" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-6">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            Translator, a better choice for translating academic papers.
-                        </h5>
-                        <div class="card-text">
-                            <p>
-                                Intelligently distinguish LaTeX statements and equations between normal texts.
-                            </p>
-                            <p>
-                                Retain academic style of writing and terminologies better than traditional translators.
-                            </p>
-                        </div>
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="index_asset/rewriter.webp" class="card-img-top img-fluid rounded-start" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        Rewriter, polish selected contents with one click of a button.
+                    </h5>
+                    <div class="card-text">
+                        <p>
+                            No more search for paper polishing prompts.
+                            No more constantly jump between ChatGPT and Overleaf.
+                        </p>
+                        <p>
+                            Built-in high-quality prompts and integration with Overleaf, optimize your academic
+                            workflow.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card mb-5 shadow">
-            <div class="row g-0">
-                <div class="col-md-6">
-                    <img src="index_asset/position.png" class="img-fluid rounded-start" alt="...">
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="index_asset/translator.webp" class="card-img-top img-fluid rounded-start" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        Translator, a better choice for translating academic papers.
+                    </h5>
+                    <div class="card-text">
+                        <p>
+                            Intelligently distinguish LaTeX statements and equations between normal texts.
+                        </p>
+                        <p>
+                            Retain academic style of writing and terminologies better than traditional translators.
+                        </p>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            Highly customizable interface and models.
-                        </h5>
-                        <div class="card-text">
-                            <p>
-                                Versatile interface positioning and sizing.
-                                Integrate into your workflow however you like.
-                            </p>
-                            <p>
-                                Adjustable base URL, provider, and model for the API.
-                            </p>
-                        </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="index_asset/position.webp" class="card-img-top img-fluid rounded-start" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        Highly customizable interface and models.
+                    </h5>
+                    <div class="card-text">
+                        <p>
+                            Versatile interface positioning and sizing.
+                            Integrate into your workflow however you like.
+                        </p>
+                        <p>
+                            Adjustable base URL, provider, and model for the API.
+                        </p>
+
                     </div>
                 </div>
             </div>
