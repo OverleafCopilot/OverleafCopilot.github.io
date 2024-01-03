@@ -42,8 +42,9 @@
             <video class="shadow" width="100%" src="demonstration.webm" type="video/mp4" controls></video>
         </div>
     </div>
-    <div class="col-xl-10 mx-auto row row-cols-1 row-cols-md-2 my-2 gy-4" data-masonry='{"percentPosition": true }'>
-        <div class="col">
+    <div class="col-xl-10 mx-auto row row-cols-1 row-cols-md-2 my-2 gy-4" data-masonry='{"percentPosition": true }'
+        id="function-row">
+        <div class="col function-col">
             <div class="card shadow-sm">
                 <img src="index_asset/proxy.webp" class="card-img-top img-fluid rounded-start" alt="...">
                 <div class="card-body">
@@ -63,7 +64,7 @@
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col function-col">
             <div class="card shadow-sm">
                 <img src="index_asset/rewriter.webp" class="card-img-top img-fluid rounded-start" alt="...">
                 <div class="card-body">
@@ -83,7 +84,7 @@
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col function-col">
             <div class="card shadow-sm">
                 <img src="index_asset/translator.webp" class="card-img-top img-fluid rounded-start" alt="...">
                 <div class="card-body">
@@ -101,7 +102,7 @@
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col function-col">
             <div class="card shadow-sm">
                 <img src="index_asset/position.webp" class="card-img-top img-fluid rounded-start" alt="...">
                 <div class="card-body">
@@ -126,4 +127,19 @@
 
 <script>
     const download_tooltip = new bootstrap.Tooltip($('#download-btn'));
+
+    var images = $('#function-rows').find('img');
+    images.each(() => {
+        if (this.complete) {
+            $(this).trigger('load');
+        }
+    })
+    images.on('load', () => {
+        $('#function-rows').masonry({
+            itemSelector: '.function-col',
+            columnWidth: '.function-col',
+            transitionDuration: 500,
+            percentPosition: true
+        }).masonry('reloadItems').masonry('layout');
+    })
 </script>
