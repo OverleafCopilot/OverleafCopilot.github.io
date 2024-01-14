@@ -125,18 +125,22 @@
 <script>
     const download_tooltip = new bootstrap.Tooltip($('#download-btn'));
 
-    var images = $('#function-rows').find('img');
-    images.each(() => {
-        if (this.complete) {
-            $(this).trigger('load');
-        }
-    })
-    images.on('load', () => {
-        $('#function-rows').masonry({
-            itemSelector: '.function-col',
-            columnWidth: '.function-col',
-            transitionDuration: 500,
-            percentPosition: true
-        }).masonry('reloadItems').masonry('layout');
-    })
+    function masonry_reload_on_images(parent_dom, item_selector) {
+        var images = parent_dom.find('img');
+        images.each(() => {
+            if (this.complete) {
+                $(this).trigger('load');
+            }
+        })
+        images.on('load', () => {
+            parent_dom.masonry({
+                itemSelector: item_selector,
+                columnWidth: item_selector,
+                transitionDuration: 500,
+                percentPosition: true
+            }).masonry('reloadItems').masonry('layout');
+        })
+    }
+
+    masonry_reload_on_images($('#function-row'), '.function-col')
 </script>

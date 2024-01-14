@@ -69,7 +69,7 @@
                             <li> Access to GPT-4 </li>
                             <li> Unlimited Agents </li>
                             <li> Customizable shortcut </li>
-                            <li> Update of Advanced Agents  </li>
+                            <li> Update of Advanced Agents </li>
                             <li> 100 credits included </li>
                         </ul>
                         <button type="button" class="w-100 btn btn-lg btn-primary buy-btn"
@@ -94,7 +94,7 @@
                             <li> Access to GPT-4 </li>
                             <li> Unlimited Agents </li>
                             <li> Customizable shortcut </li>
-                            <li> Update of Advanced Agents  </li>
+                            <li> Update of Advanced Agents </li>
                             <li> 400 credits included </li>
                         </ul>
                         <button type="button" class="w-100 btn btn-lg btn-warning buy-btn"
@@ -103,8 +103,74 @@
                 </div>
             </div>
         </div>
-    </div>
+
+        <hr>
+
+        <div class="mx-auto row row-cols-1 row-cols-lg-2 row-cols-xxl-3 my-2 g-2" id="function-row">
+            <div class="col function-col">
+                <div class="card shadow-sm">
+                    <img src="license_asset/proxy.webp" class="card-img-top img-fluid rounded-start" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            OpenAI Proxy, hassle-free access to GPT-3.5 and GPT-4.
+                        </h5>
+                        <div class="card-text">
+                            <p>
+                                No need for acquiring an OpenAI API Key.
+                                No need to understand the complex technical details of OpenAI API.
+                            </p>
+                            <p>
+                                Easy and straight-forward access to OpenAI models.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col function-col">
+                <div class="card shadow-sm">
+                    <img src="license_asset/agent.webp" class="card-img-top img-fluid rounded-start" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Advanced Agents, a community of fancy writing assistants. <span class="text-secondary">(In
+                                coming)</span>
+                        </h5>
+                        <div class="card-text">
+                            <p>
+                                Context awareness, auto copy and paste, directly write suggestions into Overleaf
+                                comments, and so on.
+                            </p>
+                            <p>
+                                We are actively developing an engine for achieving all kinds of advanced agents that
+                                integrates Overleaf with ChatGPT to another level.
+                            </p>
+                            <p>
+                                There will also be a community where you can install a new agent with one click, and
+                                share with others your fancy agent.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 
 <script>
+    function masonry_reload_on_images(parent_dom, item_selector) {
+        var images = parent_dom.find('img');
+        images.each(() => {
+            if (this.complete) {
+                $(this).trigger('load');
+            }
+        })
+        images.on('load', () => {
+            parent_dom.masonry({
+                itemSelector: item_selector,
+                columnWidth: item_selector,
+                transitionDuration: 500,
+                percentPosition: true
+            }).masonry('reloadItems').masonry('layout');
+        })
+    }
+
+    masonry_reload_on_images($('#function-row'), '.function-col')
 </script>
