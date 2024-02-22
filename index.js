@@ -22,9 +22,9 @@ index['buttons'].forEach(({ url, text, icon, style, tooltip }, i) => {
     $('#button-row').append(button);
 })
 
-$('#headline').html(`
-    <img src="index_asset/${index['head_img']}" width="100%">
-`)
+for (var key in index['head_imgs']) {
+    $(`#headline-${key}`).attr('src', `index_asset/${index['head_imgs'][key]}`)
+}
 
 index['cards'].forEach(({ title, texts, img }, i) => {
     var card_body = $('<div class="card-body">');

@@ -4,7 +4,11 @@ const index = {
         { "text": "Copilot", "color": "#ff7300" }
     ],
     "slogan": "Seamlessly incorporate ChatGPT to power and accelerate academic writing in Overleaf.",
-    "head_img": "headline.webp",
+    "head_imgs": {
+        "sm": "headline_sm.webp",
+        "md": "headline_lg.webp",
+        "lg": "headline_xl.webp"
+    },
     "buttons": [
         {
             "url": "https://chromewebstore.google.com/detail/overleaf-copilot/eoadabdpninlhkkbhngoddfjianhlghb",
