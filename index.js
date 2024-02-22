@@ -41,6 +41,20 @@ index['cards'].forEach(({ title, texts, img }, i) => {
     $('#function-row').append($('<div class="col function-col">').append(card));
 })
 
+$('#play-btn').on('click', () => {
+    $('#demo-video').removeClass('d-none');
+    $('#headline-div').hide();
+    $('#play-btn').hide();
+    $('#close-video-btn').show();
+})
+
+$('#close-video-btn').on('click', () => {
+    $('#demo-video').addClass('d-none');
+    $('#headline-div').show();
+    $('#play-btn').show();
+    $('#close-video-btn').hide();
+})
+
 function masonry_reload_on_images(parent_dom, item_selector) {
     var images = parent_dom.find('img');
     images.each(() => {
