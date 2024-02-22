@@ -26,60 +26,60 @@ const index = {
     ],
     "cards": [
         {
-            "title": "OpenAI Proxy, hassle-free access to GPT-3.5 and GPT-4.",
+            "title": "OpenAI Proxy: Effortless Access to GPT-3.5 and GPT-4.",
             "texts": [
-                "No need for acquiring an OpenAI API Key. No need to understand the complex technical details of OpenAI API.",
-                "Easy and straight-forward access to OpenAI models. Free-trial included!"
+                "Eliminate the need for an OpenAI API Key and bypass the complexity of OpenAI API technicalities.",
+                "Gain direct and uncomplicated access to OpenAI models, with a free trial included!"
             ],
             "img": "proxy.webp"
         },
         {
-            "title": "Highly customizable interface.",
+            "title": "Rewriter: Enhance Your Content with a Single Click.",
             "texts": [
-                "Versatile interface positioning and sizing. Integrate into your workflow however you like.",
-                "Deeply intergration with Overleaf. You may mistaken it as an native tool."
-            ],
-            "img": "interface.webp"
-        },
-        {
-            "title": "Highly customizable models and prompts.",
-            "texts": [
-                "Choose from a variety of GPT models to meet your editing requirements.",
-                "Customize prompts to align with your specific preferences."
-            ],
-            "img": "models_prompts.webp"
-        },
-        {
-            "title": "Rewriter, polish selected contents with one click of a button.",
-            "texts": [
-                "No more search for paper polishing prompts. No more constantly jump between ChatGPT and Overleaf.",
-                "Built-in high-quality prompts and integration with Overleaf, optimize your academic workflow."
+                "Forget the hassle of searching for paper polishing prompts and switching between ChatGPT and Overleaf.",
+                "Enjoy built-in high-quality prompts and seamless Overleaf integration to streamline your academic work."
             ],
             "img": "rewriter.webp"
         },
         {
-            "title": "Translator, a better choice for translating academic papers.",
+            "title": "Auto-completion: Crafting the Next Sentence for You.",
             "texts": [
-                "Intelligently distinguish LaTeX statements and equations between normal texts.",
-                "Retain academic style of writing and terminologies better than traditional translators."
+                "Benefit from context-aware suggestions that assist when you're stuck.",
+                "Efficiently complete or extend your sentences with ease."
+            ],
+            "img": "completor.webp"
+        },
+        {
+            "title": "Translator: The Superior Choice for Academic Papers.",
+            "texts": [
+                "Smartly differentiates LaTeX elements and regular text, preserving the academic integrity.",
+                "Maintains the scholarly tone and specific terminologies more effectively than standard translation tools."
             ],
             "img": "translator.webp"
         },
         {
-            "title": "Checker, a more robust grammar and spelling checker.",
+            "title": "Checker: An Advanced Grammar and Spelling Tool.",
             "texts": [
-                "AI-powered checker to ensure no writing oversights.",
-                "Beautiful and practical comparison interface, intuitively see grammar and spelling errors."
+                "Leverage AI to detect and correct any writing errors, ensuring flawless output.",
+                "Experience a user-friendly comparison interface that highlights grammar and spelling mistakes clearly."
             ],
             "img": "checker.webp"
         },
         {
-            "title": "Completor, write the next sentence for you.",
+            "title": "Highly Customizable Interface.",
             "texts": [
-                "Context-aware completion that helps you when you are out of ideas.",
-                "Capable of both writing the next sentence, or completing the current sentence."
+                "Adjust interface placement and size to fit your workflow with versatility.",
+                "Experience deep integration with Overleaf, making it feel like a native tool."
             ],
-            "img": "completor.webp"
+            "img": "interface.webp"
+        },
+        {
+            "title": "Customizable Models and Prompts.",
+            "texts": [
+                "Select from various ChatGPT models tailored to your editing needs.",
+                "Personalize prompts to suit your unique requirements."
+            ],
+            "img": "models_prompts.webp"
         }
     ]
 }
