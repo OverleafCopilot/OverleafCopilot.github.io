@@ -1,8 +1,5 @@
 index['title'].forEach(({ text, color }, i) => {
     var span = $(`<span style="color:${color};">${text}</span>`);
-    if (i > 0) {
-        span.addClass('ms-2');
-    }
     $('#title').append(span);
 })
 
