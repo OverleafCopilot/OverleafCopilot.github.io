@@ -143,7 +143,7 @@ const premium_license = {
             "title": "Premium",
             "style": "primary",
             "price": "¥4.99",
-            "span": "7 Days",
+            "span": "7Days",
             "basic": [
                 "Require OpenAI API Key: No",
                 "High-quality default prompts",
@@ -167,7 +167,7 @@ const premium_license = {
             "title": "Premium+",
             "style": "warning",
             "price": "¥14.99",
-            "span": "30 Days",
+            "span": "30Days",
             "basic": [
                 "Require OpenAI API Key: No",
                 "High-quality default prompts",
