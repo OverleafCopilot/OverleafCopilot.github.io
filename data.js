@@ -85,3 +85,107 @@ const index = {
         }
     ]
 }
+
+const premium_license = {
+    "title": [
+        { "text": "Overleaf", "color": "#408827" },
+        { "text": "Copilot", "color": "#ff7300" },
+        { "text": "Premium", "color": "#8c0000" }
+    ],
+    "slogan": "Seamlessly incorporate ChatGPT to power and accelerate academic writing in Overleaf.",
+    "cards": [
+        {
+            "title": "OpenAI Proxy: Effortless Access to GPT-3.5 and GPT-4.",
+            "texts": [
+                "Eliminate the need for an OpenAI API Key and bypass the complexity of OpenAI API technicalities.",
+                "Gain direct and uncomplicated access to OpenAI models."
+            ],
+            "img": "proxy.webp",
+            "badge": ["stars", "Premium"]
+        },
+        {
+            "title": "Auto-completion: Crafting the Next Sentence for You.",
+            "texts": [
+                "Benefit from context-aware suggestions that assist when you're stuck.",
+                "Efficiently complete or extend your sentences with ease."
+            ],
+            "img": "completor.webp",
+            "badge": ["stars", "Premium"]
+        },
+        {
+            "title": "Advanced Agents: Elevating AI Integration to New Heights.",
+            "texts": [
+                "Leverage our sophisticated Template Directive Engine (TDE) for dynamic interactions between Overleaf and ChatGPT.",
+                "Easily install new agents with our user-friendly online service."
+            ],
+            "img": "agents.webp",
+            "badge": ["code-slash", "In-development"]
+        }
+    ],
+    "pricing": [
+        {
+            "title": "Free",
+            "style": "secondary",
+            "price": "¥0",
+            "basic": [
+                "Require OpenAI API Key: Yes",
+                "High-quality default prompts",
+                "Customizable prompts",
+                "Fully integrated with Overleaf"
+            ],
+            "button": {
+                "text": "Start Using",
+                "url": "https://chromewebstore.google.com/detail/overleaf-copilot/eoadabdpninlhkkbhngoddfjianhlghb",
+                "style": "outline-primary"
+            }
+        },
+        {
+            "title": "Premium",
+            "style": "primary",
+            "price": "¥4.99",
+            "span": "7 Days",
+            "basic": [
+                "Require OpenAI API Key: No",
+                "High-quality default prompts",
+                "Customizable prompts",
+                "Fully integrated with Overleaf"
+            ],
+            "advanced": [
+                " Access to GPT-4 ",
+                " Unlimited Agents ",
+                " Customizable shortcut ",
+                " Update of Advanced Agents ",
+                " 100 credits included "
+            ],
+            "button": {
+                "text": "Buy",
+                "url": "https://item.taobao.com/item.htm?ft=t&id=756329846221",
+                "style": "primary"
+            }
+        },
+        {
+            "title": "Premium+",
+            "style": "warning",
+            "price": "¥14.99",
+            "span": "30 Days",
+            "basic": [
+                "Require OpenAI API Key: No",
+                "High-quality default prompts",
+                "Customizable prompts",
+                "Fully integrated with Overleaf"
+            ],
+            "advanced": [
+                " Access to GPT-4 ",
+                " Unlimited Agents ",
+                " Customizable shortcut ",
+                " Update of Advanced Agents ",
+                " 400 credits included "
+            ],
+            "button": {
+                "text": "Buy",
+                "url": "https://item.taobao.com/item.htm?ft=t&id=760277782033",
+                "style": "warning"
+            }
+        }
+    ]
+}
