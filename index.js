@@ -26,7 +26,7 @@ for (var key in index['head_imgs']) {
     $(`#headline-${key}`).attr('src', `index_asset/${index['head_imgs'][key]}`)
 }
 
-index['cards'].forEach(({ title, texts, img }, i) => {
+index['cards'].forEach(({ title, texts, img, badge }, i) => {
     var card_body = $('<div class="card-body">');
     var card_title = $(`<h5 class="card-title">${title}</h5>`);
     var card_text = $('<div class="card-text">');
@@ -39,6 +39,12 @@ index['cards'].forEach(({ title, texts, img }, i) => {
     card.append(`<img src="index_asset/${img}" class="card-img-top img-fluid rounded-start" alt="...">`);
     card.append(card_body);
     $('#function-row').append($('<div class="col function-col">').append(card));
+
+    if (badge) {
+        var float_badge = $(`<span class="badge text-bg-warning position-absolute" style="top: 1%; right: 1%; opacity: 75%">
+            <i class="bi bi-${badge[0]} pe-1"></i>${badge[1]}</span>`)
+        card.append(float_badge)
+    }
 })
 
 $('#play-btn').on('click', () => {

@@ -31,7 +31,17 @@ const index = {
                 "Eliminate the need for an OpenAI API Key and bypass the complexity of OpenAI API technicalities.",
                 "Gain direct and uncomplicated access to OpenAI models, with a free trial included!"
             ],
-            "img": "proxy.webp"
+            "img": "proxy.webp",
+            "badge": ["stars", "Premium"]
+        },
+        {
+            "title": "Auto-completion: Crafting the Next Sentence for You.",
+            "texts": [
+                "Benefit from context-aware suggestions that assist when you're stuck.",
+                "Efficiently complete or extend your sentences with ease."
+            ],
+            "img": "completor.webp",
+            "badge": ["stars", "Premium"]
         },
         {
             "title": "Rewriter: Enhance Your Content with a Single Click.",
@@ -40,14 +50,6 @@ const index = {
                 "Enjoy built-in high-quality prompts and seamless Overleaf integration to streamline your academic work."
             ],
             "img": "rewriter.webp"
-        },
-        {
-            "title": "Auto-completion: Crafting the Next Sentence for You.",
-            "texts": [
-                "Benefit from context-aware suggestions that assist when you're stuck.",
-                "Efficiently complete or extend your sentences with ease."
-            ],
-            "img": "completor.webp"
         },
         {
             "title": "Translator: The Superior Choice for Academic Papers.",
