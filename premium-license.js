@@ -27,20 +27,20 @@ premium_license['cards'].forEach(({ title, texts, img, badge }, i) => {
 })
 
 premium_license['pricing'].forEach(({ title, style, price, span, basic, advanced, button }) => {
-    var card = $(`<div class="card mb-4 rounded-3 shadow-sm border-${style}">`)
+    var card = $(`<div class="card w-100 mb-4 rounded-3 shadow-sm border-${style}">`)
     var card_header = $(`
         <div class="card-header py-3 text-bg-${style} border-${style}">
             <h4 class="my-0 fw-normal">${title}</h4>
         </div>
     `);
 
-    var card_body = $(`<div class="card-body">`);
-    var card_title = $(`<h1 class="card-title">`);
+    var card_body = $(`<div class="card-body d-flex flex-column">`);
+    var card_title = $(`<h1 class="card-title mb-0">`);
     card_title.append(`<span>${price}</span>`);
     if (span) {
         card_title.append(`<small class="text-body-secondary fw-light">/${span}</small>`)
     }
-    var func_list = $('<ul class="list-unstyled mt-3 mb-4">');
+    var func_list = $('<ul class="list-unstyled my-auto py-3">');
     basic.forEach((line) => {
         func_list.append(`<li>${line}</li>`);
     })
@@ -51,10 +51,10 @@ premium_license['pricing'].forEach(({ title, style, price, span, basic, advanced
         })
     }
     card_body.append(card_title).append(func_list).append($(`
-        <button type="button" class="w-100 btn btn-lg btn-${button['style']}"
+        <button type="button" class="w-100 mt-auto btn btn-lg btn-${button['style']}"
             onClick="javascript:window.open('${button['url']}', '_blank');">${button['text']}</button>
     `));
-    $('#prices').append($('<div class="col">').append(card.append(card_header).append(card_body)));
+    $('#prices').append($('<div class="col d-flex align-self-stretch">').append(card.append(card_header).append(card_body)));
 })
 
 function masonry_reload_on_images(parent_dom, item_selector) {
