@@ -20,20 +20,21 @@
         class="justify-content-center align-items-center position-fixed top-0 start-0 w-100 h-100 d-none"
         style="background-color: rgba(0, 0, 0, 0.7); z-index: 2;">
         <div class="col-12 col-xxl-10 position-relative">
-            <button class="btn btn-secondary px-2 py-0 position-absolute top-0 start-0 ms-4 mt-4" id="close-video-btn"
-                style="font-size: 2em; opacity: 0.7; z-index: 4;">
+            <button class="btn btn-secondary px-2 py-0 position-absolute top-0 end-0 m-4" id="close-video-btn"
+                style="font-size: 1.5em; opacity: 0.7; z-index: 4;">
                 <i class="bi bi-x-lg"></i>
             </button>
             <video controls class="w-100" id="demo-video" style="z-index: 3;">
-                <source src="demo.webm" type="video/webm" />
+                <source src="videos/demo.webm" type="video/webm" />
+                <source src="videos/demo.mp4" type="video/mp4" />
             </video>
         </div>
     </div>
 
     <div class="text-center pt-5" style="background-color: rgb(193, 214, 232);">
-        <div class="display-4 fw-bold text-body-emphasis gap-2 d-flex justify-content-center" id="title">
+        <div class="display-4 fw-bold text-body-emphasis d-flex flex-wrap justify-content-center" id="title">
         </div>
-        <div class="mx-auto px-3 mb-4">
+        <div class="mx-auto px-3 mb-4 mt-2">
             <p class="lead" id="slogan"></p>
         </div>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mx-3" id="button-row"></div>
@@ -43,17 +44,18 @@
                 <i class="bi bi-play-circle"></i>
             </button>
             <div id="headline-div">
-                <img class="d-block d-md-none w-100 pb-3" id="headline-sm">
+                <img class="d-block d-md-none w-100" id="headline-sm">
                 <img class="d-none d-md-block d-xxl-none w-100" id="headline-md">
                 <img class="d-none d-xxl-block w-100" id="headline-lg">
             </div>
         </div>
     </div>
-    <div class="container-xl my-4">
+    <div class="container-xxl my-4">
         <div class="row row-cols-1 row-cols-md-2 row-cols-xxl-3 g-3" id="function-row"></div>
     </div>
 </body>
 
+<script src="footer.js"></script>
 <script src="data.js"></script>
 <script src="utils.js"></script>
 <script src="index.js"></script>

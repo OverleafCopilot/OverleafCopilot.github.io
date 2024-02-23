@@ -1,5 +1,5 @@
 index['title'].forEach(({ text, color }, i) => {
-    var span = $(`<span style="color:${color};">${text}</span>`);
+    var span = $(`<span class="mx-1" style="color:${color};">${text}</span>`);
     $('#title').append(span);
 })
 
@@ -20,7 +20,7 @@ index['buttons'].forEach(({ url, text, icon, style, tooltip }, i) => {
 })
 
 for (var key in index['head_imgs']) {
-    $(`#headline-${key}`).attr('src', `index_asset/${index['head_imgs'][key]}`)
+    $(`#headline-${key}`).attr('src', `images/${index['head_imgs'][key]}`)
 }
 
 index['cards'].forEach(({ title, texts, img, badge }, i) => {
@@ -33,7 +33,7 @@ index['cards'].forEach(({ title, texts, img, badge }, i) => {
     card_body.append(card_title).append(card_text);
 
     var card = $('<div class="card shadow-sm">');
-    card.append(`<img src="index_asset/${img}" class="card-img-top img-fluid rounded-start" alt="${img}">`);
+    card.append(`<img src="images/${img}" class="card-img-top img-fluid rounded-start" alt="${img}">`);
     card.append(card_body);
     $('#function-row').append($('<div class="col function-col">').append(card));
 

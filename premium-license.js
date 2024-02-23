@@ -1,5 +1,5 @@
 premium_license['title'].forEach(({ text, color }, i) => {
-    var span = $(`<span style="color:${color};">${text}</span>`);
+    var span = $(`<span class="mx-1" style="color:${color};">${text}</span>`);
     $('#title').append(span);
 })
 
@@ -15,7 +15,7 @@ premium_license['cards'].forEach(({ title, texts, img, badge }, i) => {
     card_body.append(card_title).append(card_text);
 
     var card = $('<div class="card shadow-sm">');
-    card.append(`<img src="index_asset/${img}" class="card-img-top img-fluid rounded-start" alt="${img}">`);
+    card.append(`<img src="images/${img}" class="card-img-top img-fluid rounded-start" alt="${img}">`);
     card.append(card_body);
     $('#function-row').append($('<div class="col function-col">').append(card));
 
