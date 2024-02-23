@@ -10,6 +10,10 @@ $('body').append(`
 
 var footer_links = [
     {
+        "text": "Home",
+        "url": "./index.html"
+    },
+    {
         "text": "Contact",
         "url": "mailto:linyanwd@icloud.com"
     },

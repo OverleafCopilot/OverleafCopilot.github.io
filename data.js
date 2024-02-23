@@ -82,6 +82,22 @@ const index = {
                 "Personalize prompts to suit your unique requirements."
             ],
             "img": "models_prompts.webp"
+        },
+        {
+            "title": "Enhanced Support for Rich Text Rendering",
+            "texts": [
+                "Efficiently displays rich text as intended.",
+                "Seamlessly toggles between rich text and source code modes."
+            ],
+            "img": "rich_render.webp"
+        },
+        {
+            "title": "Ongoing Evolution of Advanced Agents",
+            "texts": [
+                "Utilize our advanced Template Directive Engine (TDE) to facilitate dynamic interactions between Overleaf and ChatGPT.",
+                "Taking AI Integration to the Next Level."
+            ],
+            "img": "agents.webp"
         }
     ]
 }
