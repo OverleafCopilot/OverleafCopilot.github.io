@@ -127,11 +127,13 @@ const premium_license = {
             "title": "Free",
             "style": "secondary",
             "price": "¥0",
-            "basic": [
-                "Require OpenAI API Key: Yes",
-                "High-quality default prompts",
-                "Customizable prompts",
-                "Fully integrated with Overleaf"
+            "desc": [
+                [
+                    "Require OpenAI API Key: Yes",
+                    "High-quality default prompts",
+                    "Customizable prompts",
+                    "Fully integrated with Overleaf"
+                ]
             ],
             "button": {
                 "text": "Start Using",
@@ -144,18 +146,20 @@ const premium_license = {
             "style": "primary",
             "price": "¥4.99",
             "span": "7Days",
-            "basic": [
-                "Require OpenAI API Key: No",
-                "High-quality default prompts",
-                "Customizable prompts",
-                "Fully integrated with Overleaf"
-            ],
-            "advanced": [
-                " Access to GPT-4 ",
-                " Unlimited Agents ",
-                " Customizable shortcut ",
-                " Update of Advanced Agents ",
-                " 100 credits included "
+            "desc": [
+                [
+                    "Require OpenAI API Key: No",
+                    "High-quality default prompts",
+                    "Customizable prompts",
+                    "Fully integrated with Overleaf"
+                ],
+                [
+                    " Access to GPT-4 ",
+                    " Unlimited Agents ",
+                    " Customizable shortcut ",
+                    " Update of Advanced Agents ",
+                    " 100 credits included "
+                ]
             ],
             "button": {
                 "text": "Buy",
@@ -168,18 +172,20 @@ const premium_license = {
             "style": "warning",
             "price": "¥14.99",
             "span": "30Days",
-            "basic": [
-                "Require OpenAI API Key: No",
-                "High-quality default prompts",
-                "Customizable prompts",
-                "Fully integrated with Overleaf"
-            ],
-            "advanced": [
-                " Access to GPT-4 ",
-                " Unlimited Agents ",
-                " Customizable shortcut ",
-                " Update of Advanced Agents ",
-                " 400 credits included "
+            "desc": [
+                [
+                    "Require OpenAI API Key: No",
+                    "High-quality default prompts",
+                    "Customizable prompts",
+                    "Fully integrated with Overleaf"
+                ],
+                [
+                    " Access to GPT-4 ",
+                    " Unlimited Agents ",
+                    " Customizable shortcut ",
+                    " Update of Advanced Agents ",
+                    " 400 credits included "
+                ]
             ],
             "button": {
                 "text": "Buy",

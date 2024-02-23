@@ -13,25 +13,23 @@
     <script src="modules/bootstrap.bundle.min.js"></script>
     <script src="modules/jquery-3.7.1.min.js"></script>
     <script src="modules/masonry.pkgd.min.js"></script>
-
-    <style>
-        #play-btn {
-            font-size: 3em;
-            opacity: 0.5;
-        }
-
-        #close-video-btn {
-            top: 0%;
-            left: 0%;
-            transform: translate(0%, -100%);
-            font-size: 2em;
-            opacity: 0.5;
-            display: none;
-        }
-    </style>
 </head>
 
 <body>
+    <div id="video-overlay"
+        class="justify-content-center align-items-center position-fixed top-0 start-0 w-100 h-100 d-none"
+        style="background-color: rgba(0, 0, 0, 0.7); z-index: 2;">
+        <div class="col-12 col-xxl-10 position-relative">
+            <button class="btn btn-secondary px-2 py-0 position-absolute top-0 start-0 ms-4 mt-4" id="close-video-btn"
+                style="font-size: 2em; opacity: 0.7; z-index: 4;">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <video controls class="w-100" id="demo-video" style="z-index: 3;">
+                <source src="demo.webm" type="video/webm" />
+            </video>
+        </div>
+    </div>
+
     <div class="text-center pt-5" style="background-color: rgb(193, 214, 232);">
         <div class="display-4 fw-bold text-body-emphasis gap-2 d-flex justify-content-center" id="title">
         </div>
@@ -40,16 +38,10 @@
         </div>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mx-3" id="button-row"></div>
         <div class="col-12 col-xxl-10 mx-auto mt-4 position-relative" id="headline">
-            <button class="btn btn-secondary px-2 py-0 position-absolute top-50 start-50 translate-middle"
-                id="play-btn">
+            <button class="btn btn-secondary px-2 py-0 position-absolute top-50 start-50 translate-middle" id="play-btn"
+                style="font-size: 3em; opacity: 0.7;">
                 <i class="bi bi-play-circle"></i>
             </button>
-            <button class="btn btn-secondary px-2 py-0 position-absolute" id="close-video-btn">
-                <i class="bi bi-x-lg"></i>
-            </button>
-            <video controls width="100%" class="d-none mb-2" id="demo-video">
-                <source src="demo.webm" type="video/webm" />
-            </video>
             <div id="headline-div">
                 <img class="d-block d-md-none w-100 pb-3" id="headline-sm">
                 <img class="d-none d-md-block d-xxl-none w-100" id="headline-md">
@@ -63,4 +55,5 @@
 </body>
 
 <script src="data.js"></script>
+<script src="utils.js"></script>
 <script src="index.js"></script>

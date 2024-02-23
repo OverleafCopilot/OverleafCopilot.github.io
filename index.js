@@ -33,7 +33,7 @@ index['cards'].forEach(({ title, texts, img, badge }, i) => {
     card_body.append(card_title).append(card_text);
 
     var card = $('<div class="card shadow-sm">');
-    card.append(`<img src="index_asset/${img}" class="card-img-top img-fluid rounded-start" alt="...">`);
+    card.append(`<img src="index_asset/${img}" class="card-img-top img-fluid rounded-start" alt="${img}">`);
     card.append(card_body);
     $('#function-row').append($('<div class="col function-col">').append(card));
 
@@ -45,34 +45,16 @@ index['cards'].forEach(({ title, texts, img, badge }, i) => {
 })
 
 $('#play-btn').on('click', () => {
-    $('#demo-video').removeClass('d-none');
-    $('#headline-div').hide();
-    $('#play-btn').hide();
-    $('#close-video-btn').show();
+    $('#video-overlay').removeClass('d-none');
+    $('#video-overlay').addClass('d-flex');
+    $('#demo-video').trigger('play');
 })
 
 $('#close-video-btn').on('click', () => {
-    $('#demo-video').addClass('d-none');
-    $('#headline-div').show();
-    $('#play-btn').show();
-    $('#close-video-btn').hide();
+    $('#video-overlay').addClass('d-none');
+    $('#video-overlay').removeClass('d-flex');
+    $('#demo-video').trigger('pause');
 })
 
-function masonry_reload_on_images(parent_dom, item_selector) {
-    var images = parent_dom.find('img');
-    images.each(() => {
-        if (this.complete) {
-            $(this).trigger('load');
-        }
-    })
-    images.on('load', () => {
-        parent_dom.masonry({
-            itemSelector: item_selector,
-            columnWidth: item_selector,
-            transitionDuration: 500,
-            percentPosition: true
-        }).masonry('reloadItems').masonry('layout');
-    })
-}
-
+masonry_reload($('#function-row'), '.function-col')
 masonry_reload_on_images($('#function-row'), '.function-col')
