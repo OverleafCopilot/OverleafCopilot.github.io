@@ -49,7 +49,7 @@ premium_license['pricing'].forEach(({ title, style, price, span, desc, button })
         <button type="button" class="w-100 mt-auto btn btn-lg btn-${button['style']}"
             onClick="javascript:window.open('${button['url']}', '_blank');">${button['text']}</button>
     `));
-    $('#prices').append($('<div class="col d-flex align-self-stretch">').append(card.append(card_header).append(card_body)));
+    $('#prices').append($('<div class="col d-flex align-self-stretch px-2">').append(card.append(card_header).append(card_body)));
 })
 
 masonry_reload($('#function-row'), '.function-col')
