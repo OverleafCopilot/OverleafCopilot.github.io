@@ -28,8 +28,7 @@ const index = {
         {
             "title": "OpenAI Proxy: Effortless Access to GPT-3.5 and GPT-4",
             "texts": [
-                "Eliminate the need for an OpenAI API Key and bypass the complexity of OpenAI API technicalities.",
-                "Gain direct and uncomplicated access to OpenAI models, with a free trial included!"
+                "Access OpenAI models directly without the need for an API key, offering straightforward and immediate use."
             ],
             "img": "proxy.webp",
             "badge": ["stars", "Premium"]
@@ -37,8 +36,7 @@ const index = {
         {
             "title": "Completer: Crafting the Next Sentence for You",
             "texts": [
-                "Benefit from context-aware suggestions that assist when you're stuck.",
-                "Efficiently complete or extend your sentences with ease."
+                "Complete or extend your sentences with context-aware suggestions."
             ],
             "img": "completor.webp",
             "badge": ["stars", "Premium"]
@@ -46,63 +44,56 @@ const index = {
         {
             "title": "Rewriter: Enhance Your Content with a Single Click",
             "texts": [
-                "Forget the hassle of searching for paper polishing prompts and switching between ChatGPT and Overleaf.",
-                "Enjoy built-in high-quality prompts and seamless Overleaf integration to streamline your academic work."
+                "Easily refine your drafts into polished academic works."
             ],
             "img": "rewriter.webp"
         },
         {
             "title": "Translator: The Superior Choice for Academic Papers",
             "texts": [
-                "Smartly differentiates LaTeX elements and regular text, preserving the academic integrity.",
-                "Maintains the scholarly tone and specific terminologies more effectively than standard translation tools."
+                "Outperforms standard translation tools by preserving the academic tone and specific terminology effectively."
             ],
             "img": "translator.webp"
         },
         {
             "title": "Checker: An Advanced Grammar and Spelling Tool",
             "texts": [
-                "Leverage AI to detect and correct any writing errors, ensuring flawless output.",
-                "Experience a user-friendly comparison interface that highlights grammar and spelling mistakes clearly."
+                "Leverage AI for comprehensive detection and correction of writing errors, ensuring impeccable results."
             ],
             "img": "checker.webp"
         },
         {
             "title": "Deep Integration with Overleaf",
             "texts": [
-                "Adjust interface placement and size to fit your workflow with versatility.",
-                "Experience deep integration with Overleaf, making it feel like a native tool."
+                "Customize interface placement and size for an adaptable workflow."
             ],
             "img": "interface.webp"
         },
         {
             "title": "Highly Customizable Interface",
             "texts": [
-                "Alter the interface's theme to match your personal preference."
+                "Customize the interface theme to reflect your style and preference."
             ],
             "img": "theme.webp"
         },
         {
             "title": "Customizable Models and Prompts",
             "texts": [
-                "Select from various ChatGPT models tailored to your editing needs.",
-                "Personalize prompts to suit your unique requirements."
+                "Tailor ChatGPT models and prompts to meet your specific needs."
             ],
             "img": "models_prompts.webp"
         },
         {
             "title": "Enhanced Support for Rich Text Rendering",
             "texts": [
-                "Efficiently displays rich text as intended.",
-                "Seamlessly toggles between rich text and source code modes."
+                "Effortlessly switch between rich text and source code modes for optimal viewing."
             ],
             "img": "rich_render.webp"
         },
         {
             "title": "Ongoing Evolution of Advanced Agents",
             "texts": [
-                "Utilize our advanced Template Directive Engine (TDE) to facilitate dynamic interactions between Overleaf and ChatGPT.",
-                "Taking AI Integration to the Next Level."
+                "Utilize our advanced Template Directive Engine (TDE) to facilitate dynamic interactions between Overleaf and ChatGPT."
             ],
             "img": "agents.webp"
         }
@@ -120,8 +111,7 @@ const premium_license = {
         {
             "title": "OpenAI Proxy: Effortless Access to GPT-3.5 and GPT-4.",
             "texts": [
-                "Eliminate the need for an OpenAI API Key and bypass the complexity of OpenAI API technicalities.",
-                "Gain direct and uncomplicated access to OpenAI models."
+                "Access OpenAI models directly without the need for an API key, offering straightforward and immediate use."
             ],
             "img": "proxy.webp",
             "badge": ["stars", "Premium"]
@@ -130,7 +120,6 @@ const premium_license = {
             "title": "Completer: Crafting the Next Sentence for You.",
             "texts": [
                 "Benefit from context-aware suggestions that assist when you're stuck.",
-                "Efficiently complete or extend your sentences with ease."
             ],
             "img": "completor.webp",
             "badge": ["stars", "Premium"]
@@ -138,8 +127,7 @@ const premium_license = {
         {
             "title": "Advanced Agents: Elevating AI Integration to New Heights.",
             "texts": [
-                "Leverage our sophisticated Template Directive Engine (TDE) for dynamic interactions between Overleaf and ChatGPT.",
-                "Easily install new agents with our user-friendly online service."
+                "Leverage our sophisticated Template Directive Engine (TDE) for dynamic interactions between Overleaf and ChatGPT."
             ],
             "img": "agents.webp",
             "badge": ["code-slash", "In-development"]
