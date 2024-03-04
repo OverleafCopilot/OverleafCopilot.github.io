@@ -206,3 +206,17 @@ const premium_license = {
         }
     ]
 }
+
+const featured_agents = [
+    {
+        "title": "Extended Rewriter",
+        "desc": "Let Copilot help you polish your paragraph.",
+        "level": 0,
+        "author": "The OverleafCopilot Team",
+        "img": "ext-rewriter.gif",
+        "source": "https://overleafcopilot.github.io/agents/featured/ext-rewriter.xml",
+        "private": false,
+        "version": "0.5.16",
+        "contact": "qq group: 314373462"
+    }
+]
