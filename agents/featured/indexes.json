@@ -1,11 +1,12 @@
 [
     {
-        "name": "ext rewriter",
+        "name": "Enhanced Rewriter",
         "icon": "mdi-text-box-edit-outline",
-        "desc": "academic rewriter: let copilot help you polish your paragraph",
+        "desc": "Let Copilot help you polish your paragraph.",
         "level": 0,
-        "author": "the overleaf copilot team",
+        "author": "The Overleaf Copilot Team",
         "source": "https://overleafcopilot.github.io/agents/featured/ext-rewriter.xml",
+        "img": "ext-rewriter.gif",
         "private": false,
         "version": "0.5.16",
         "contact": "qq group: 314373462"

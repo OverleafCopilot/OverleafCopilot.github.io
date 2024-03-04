@@ -18,6 +18,12 @@ const index = {
             "style": "primary"
         },
         {
+            "url": "./agents.html",
+            "text": "Featured Agents",
+            "icon": "robot",
+            "style": "outline-danger"
+        },
+        {
             "url": "./premium-license.html",
             "text": "Premium License",
             "icon": "stars",

@@ -1,36 +1,39 @@
-featured_agents.forEach((data) => {
-    var { title, desc, level, author, img, source, private, version, contact } = data
-    var card_body = $('<div class="card-body">');
-    var card_title = $(`<h5 class="card-title">${title}</h5>`);
-    var card_text = $(`
-        <div class="card-text">
-            <p class="mb-0 mt-1">${desc}</p>
-            <p class="mb-0 mt-1 small text-secondary">Version: ${version}</p>
-            <p class="mb-0 mt-1 small text-secondary">Author: ${author}</p>
-        </div>
-    `);
-    var card_btn_row = $(`
-        <div class="row g-2 row-cols-2 mt-2">
-            <div class="col">
-                <button class="btn btn-info w-100 px-0 copy-xml-btn">Copy Agent</button>
+fetch('agents/featured/indexes.json').then((response) => response.json()).then((featured_agents) => {
+    featured_agents.forEach((data) => {
+        var { name, desc, level, author, img, source, private, version, contact } = data
+        var card_body = $('<div class="card-body">');
+        var card_title = $(`<h5 class="card-title">${name}</h5>`);
+        var card_text = $(`
+            <div class="card-text">
+                <p class="mb-0 mt-1">${desc}</p>
+                <p class="mb-0 mt-1 small text-secondary">Version: ${version}</p>
+                <p class="mb-0 mt-1 small text-secondary">Author: ${author}</p>
             </div>
-            <div class="col">
-                <button class="btn btn-outline-info w-100 px-0 copy-index-btn">Copy Index</button>
+        `);
+        var card_btn_row = $(`
+            <div class="row g-2 row-cols-2 mt-2">
+                <div class="col">
+                    <button class="btn btn-info w-100 px-0 copy-xml-btn">Copy Agent</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-outline-info w-100 px-0 copy-index-btn">Copy Index</button>
+                </div>
             </div>
-        </div>
-    `)
-    card_body.append(card_title).append(card_text).append(card_btn_row);
-    card_btn_row.find('.copy-xml-btn').on('click', () => { copyTemp(source) });
-    card_btn_row.find('.copy-index-btn').on('click', () => { copyIndex(data) });
+        `)
+        card_body.append(card_title).append(card_text).append(card_btn_row);
+        card_btn_row.find('.copy-xml-btn').on('click', () => { copyTemp(source) });
+        card_btn_row.find('.copy-index-btn').on('click', () => { copyIndex(data) });
 
-    var card = $('<div class="card shadow-sm">');
-    card.append(`<img src="agents/featured/${img}" class="card-img-top img-fluid rounded-start" alt="${img}">`);
-    card.append(card_body);
-    $('#agent-row').append($('<div class="col agent-col">').append(card));
+        var card = $('<div class="card shadow-sm">');
+        card.append(`<img src="agents/featured/${img}" class="card-img-top img-fluid rounded-start" alt="${img}">`);
+        card.append(card_body);
+        $('#agent-row').append($('<div class="col agent-col">').append(card));
+    })
+
+    masonry_reload($('#agent-row'), '.agent-col')
+    masonry_reload_on_images($('#agent-row'), '.agent-col')
 })
 
-masonry_reload($('#agent-row'), '.agent-col')
-masonry_reload_on_images($('#agent-row'), '.agent-col')
 
 async function copyTemp(source) {
     const data = await (await fetch(source)).text();
