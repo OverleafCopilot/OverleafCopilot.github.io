@@ -57,10 +57,11 @@ fetch('agents/featured/indexes.json').then((response) => response.json()).then((
     masonry_reload_on_images($('#agent-row'), '.agent-col')
 })
 
-if (window.registerAgentIndex) {
-    $('.install-col').removeClass('d-none');
-}
-
+$(window).on('load', () => {
+    if (window.registerAgentIndex) {
+        $('.install-col').removeClass('d-none');
+    }
+})
 
 async function copyTemp(source) {
     const data = await (await fetch(source)).text();
