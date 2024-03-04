@@ -2,9 +2,9 @@
     {
         "name": "Enhanced Rewriter",
         "icon": "mdi-text-box-edit-outline",
-        "desc": "Let Copilot help you polish your paragraph.",
+        "desc": "An academic rewriter of high quality, featuring intuitive highlights on modifications.",
         "level": 0,
-        "author": "The Overleaf Copilot Team",
+        "author": "OverleafCopilot Team",
         "source": "https://overleafcopilot.github.io/agents/featured/ext-rewriter.xml",
         "img": "ext-rewriter.gif",
         "private": false,
