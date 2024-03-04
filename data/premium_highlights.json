@@ -1,0 +1,35 @@
+[
+    {
+        "title": "OpenAI Proxy: Effortless Access to GPT-3.5 and GPT-4.",
+        "texts": [
+            "Access OpenAI models directly without the need for an API key, offering straightforward and immediate use."
+        ],
+        "img": "proxy.webp",
+        "badge": [
+            "stars",
+            "Premium"
+        ]
+    },
+    {
+        "title": "Completer: Crafting the Next Sentence for You.",
+        "texts": [
+            "Benefit from context-aware suggestions that assist when you're stuck."
+        ],
+        "img": "completor.webp",
+        "badge": [
+            "stars",
+            "Premium"
+        ]
+    },
+    {
+        "title": "Advanced Agents: Elevating AI Integration to New Heights.",
+        "texts": [
+            "Leverage our sophisticated Template Directive Engine (TDE) for dynamic interactions between Overleaf and ChatGPT."
+        ],
+        "img": "agents.webp",
+        "badge": [
+            "code-slash",
+            "In-development"
+        ]
+    }
+]

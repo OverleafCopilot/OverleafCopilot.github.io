@@ -1,0 +1,80 @@
+[
+    {
+        "title": "OpenAI Proxy: Effortless Access to GPT-3.5 and GPT-4",
+        "texts": [
+            "Access OpenAI models directly without the need for an API key, offering straightforward and immediate use."
+        ],
+        "img": "proxy.webp",
+        "badge": [
+            "stars",
+            "Premium"
+        ]
+    },
+    {
+        "title": "Completer: Crafting the Next Sentence for You",
+        "texts": [
+            "Complete or extend your sentences with context-aware suggestions."
+        ],
+        "img": "completor.webp",
+        "badge": [
+            "stars",
+            "Premium"
+        ]
+    },
+    {
+        "title": "Rewriter: Enhance Your Content with a Single Click",
+        "texts": [
+            "Easily refine your drafts into polished academic works."
+        ],
+        "img": "rewriter.webp"
+    },
+    {
+        "title": "Translator: The Superior Choice for Academic Papers",
+        "texts": [
+            "Outperforms standard translation tools by preserving the academic tone and specific terminology effectively."
+        ],
+        "img": "translator.webp"
+    },
+    {
+        "title": "Checker: An Advanced Grammar and Spelling Tool",
+        "texts": [
+            "Leverage AI for comprehensive detection and correction of writing errors, ensuring impeccable results."
+        ],
+        "img": "checker.webp"
+    },
+    {
+        "title": "Deep Integration with Overleaf",
+        "texts": [
+            "Customize interface placement and size for an adaptable workflow."
+        ],
+        "img": "interface.webp"
+    },
+    {
+        "title": "Highly Customizable Interface",
+        "texts": [
+            "Customize the interface theme to reflect your style and preference."
+        ],
+        "img": "theme.webp"
+    },
+    {
+        "title": "Customizable Models and Prompts",
+        "texts": [
+            "Tailor ChatGPT models and prompts to meet your specific needs."
+        ],
+        "img": "models_prompts.webp"
+    },
+    {
+        "title": "Enhanced Support for Rich Text Rendering",
+        "texts": [
+            "Effortlessly switch between rich text and source code modes for optimal viewing."
+        ],
+        "img": "rich_render.webp"
+    },
+    {
+        "title": "Ongoing Evolution of Advanced Agents",
+        "texts": [
+            "Utilize our advanced Template Directive Engine (TDE) to facilitate dynamic interactions between Overleaf and ChatGPT."
+        ],
+        "img": "agents.webp"
+    }
+]
