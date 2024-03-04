@@ -36,10 +36,12 @@ async function copyTemp(id) {
   const data = await (await fetch(`./featured/${id}.xml`)).text();
   console.log(data);
   navigator.clipboard.writeText(data);
+  alert("Template copied to clipboard!");
 }
 
 function copyIndex(id) {
   const data = indexes.get(id);
   console.log(data);
   navigator.clipboard.writeText(JSON.stringify(data, null, 2));
+  alert("Index copied to clipboard!");
 }
