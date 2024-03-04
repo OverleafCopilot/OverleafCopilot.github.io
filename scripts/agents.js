@@ -29,7 +29,7 @@ fetch('agents/featured/indexes.json').then((response) => response.json()).then((
         `)
         card_body.append(card_title).append(card_text).append(card_btn_row);
         card_btn_row.find('.copy-agent-btn').on('click', () => { copyIndex(data) });
-        card_btn_row.find('.copy-xml-btn').on('click', () => { copyTemp(source) });
+        card_btn_row.find('.copy-temp-btn').on('click', () => { copyTemp(source) });
 
         var card = $('<div class="card shadow-sm">');
         card.append(`<img src="agents/featured/${img}" class="card-img-top img-fluid rounded-start" alt="${img}">`);
