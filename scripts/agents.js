@@ -1,3 +1,10 @@
+const alert_toast = bootstrap.Toast.getOrCreateInstance($('#alert-toast'));
+
+function showAlert(content) {
+    $('#toast-content').text(content);
+    alert_toast.show();
+}
+
 agents['title'].forEach(({ text, color }, i) => {
     var span = $(`<span class="mx-1" style="color:${color};">${text}</span>`);
     $('#title').append(span);
@@ -29,21 +36,32 @@ fetch('agents/featured/indexes.json').then((response) => response.json()).then((
         `);
         var card_btn_row = $(`
             <div class="d-flex flex-row flex-nowrap align-items-stretch gap-2">
-                <div class="col install-col d-none">
-                    <button class="btn btn-warning w-100 h-100 px-0 install-btn"><i class="bi bi-archive"></i> Install</button>
+                <div class="col install-col">
+                    <button class="btn btn-warning w-100 h-100 px-0 install-btn"
+                    data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Install agent directly into your Copilot.">
+                        <i class="bi bi-archive"></i> Install
+                    </button>
                 </div>
                 <div class="col">
                     <button class="btn btn-primary w-100 h-100 px-0 copy-agent-btn">Copy Agent</button>
                 </div>
                 <div class="col">
-                    <button class="btn btn-outline-primary w-100 h-100 px-0 copy-temp-btn">Copy Template</button>
+                    <button class="btn btn-outline-primary w-100 h-100 px-0 copy-temp-btn">Copy Source</button>
                 </div>
             </div>
         `)
         card_body.append(card_title).append(card_text).append(card_btn_row);
-        card_btn_row.find('.install-btn').on('click', () => {
-            registerAgentIndex(data);
+
+        var install_btn = card_btn_row.find('.install-btn');
+        install_btn.on('click', () => {
+            if (window.registerAgentIndex) {
+                registerAgentIndex(data);
+                showAlert('Agent installed into the Copilot.');
+            } else {
+                showAlert('No Copilot detected in your browser.');
+            }
         })
+        new bootstrap.Tooltip(install_btn);
         card_btn_row.find('.copy-agent-btn').on('click', () => { copyIndex(data) });
         card_btn_row.find('.copy-temp-btn').on('click', () => { copyTemp(source) });
 
@@ -57,19 +75,13 @@ fetch('agents/featured/indexes.json').then((response) => response.json()).then((
     masonry_reload_on_images($('#agent-row'), '.agent-col')
 })
 
-$(window).on('load', () => {
-    if (window.registerAgentIndex) {
-        $('.install-col').removeClass('d-none');
-    }
-})
-
 async function copyTemp(source) {
     const data = await (await fetch(source)).text();
     navigator.clipboard.writeText(data);
-    // alert("Template copied to clipboard!");
+    showAlert('Template copied into the clipboard.');
 }
 
 function copyIndex(data) {
     navigator.clipboard.writeText(JSON.stringify(data, null, 2));
-    // alert("Index copied to clipboard!");
+    showAlert('Agent copied into the clipboard.');
 }
