@@ -11,6 +11,17 @@
         ]
     },
     {
+        "title": "Featured Agents: Ongoing Evolution of Advanced Agents",
+        "texts": [
+            "Upgrade your Copilot effortlessly by installing cutting-edge agents with just a click."
+        ],
+        "img": "agents.webp",
+        "badge": [
+            "stars",
+            "Premium"
+        ]
+    },
+    {
         "title": "Completer: Crafting the Next Sentence for You",
         "texts": [
             "Complete or extend your sentences with context-aware suggestions."
@@ -69,12 +80,5 @@
             "Effortlessly switch between rich text and source code modes for optimal viewing."
         ],
         "img": "rich_render.webp"
-    },
-    {
-        "title": "Ongoing Evolution of Advanced Agents",
-        "texts": [
-            "Utilize our advanced Template Directive Engine (TDE) to facilitate dynamic interactions between Overleaf and ChatGPT."
-        ],
-        "img": "agents.webp"
     }
 ]
