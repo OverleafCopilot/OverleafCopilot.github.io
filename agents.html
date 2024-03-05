@@ -18,7 +18,7 @@
 
 <body>
     <div class="text-center pt-5 pb-1">
-        <div class="display-4 fw-bold text-body-emphasis d-flex flex-wrap justify-content-center" id="title">
+        <div class="display-4 fw-bold text-body-emphasis d-flex flex-wrap justify-content-center mx-3" id="title">
         </div>
         <div class="mx-auto px-3 mt-2">
             <p class="lead" id="slogan"></p>
@@ -26,11 +26,18 @@
     </div>
 
     <div class="container-xxl mb-4 mt-2">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-xxl-3 g-3" id="agent-row"></div>
+        <h3>Featured Agents</h3>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xxl-3 g-3" id="featured-agent-row"></div>
+    </div>
+
+    <div class="container-xxl mb-4 mt-2">
+        <hr>
+        <h3>Default Agents</h3>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xxl-3 g-3" id="default-agent-row"></div>
     </div>
 
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="alert-toast" class="toast" role="alert">
+        <div id="alert-toast" class="toast text-bg-primary" role="alert">
             <div class="toast-body" id="toast-content"></div>
         </div>
     </div>
