@@ -7,29 +7,29 @@
         "img": "proxy.webp",
         "badge": [
             "stars",
-            "Premium"
+            "高级功能"
         ]
     },
     {
         "title": "特色Agent：先进Agent的持续进化",
         "texts": [
-            "一键轻松升级您的Copilot，安装最前沿的Agent。"
+            "一键安装最前沿的Agent，轻松升级您的Copilot。"
         ],
         "img": "agents.webp",
         "badge": [
             "stars",
-            "Premium"
+            "高级功能"
         ]
     },
     {
-        "title": "Completer：为您编写下一句",
+        "title": "Completer：为您编写新内容",
         "texts": [
             "上下文感知的句子补全或续写。"
         ],
         "img": "completor.webp",
         "badge": [
             "stars",
-            "Premium"
+            "高级功能"
         ]
     }
 ]

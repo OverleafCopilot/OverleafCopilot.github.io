@@ -7,29 +7,29 @@
         "img": "proxy.webp",
         "badge": [
             "stars",
-            "Premium"
+            "高级功能"
         ]
     },
     {
         "title": "特色Agent：先进Agent的持续进化",
         "texts": [
-            "一键轻松升级您的Copilot，安装最前沿的Agent。"
+            "一键安装最前沿的Agent，轻松升级您的Copilot。"
         ],
         "img": "agents.webp",
         "badge": [
             "stars",
-            "Premium"
+            "高级功能"
         ]
     },
     {
-        "title": "Completer：为您编写下一句",
+        "title": "Completer：为您编写新内容",
         "texts": [
             "上下文感知的句子补全或续写。"
         ],
         "img": "completor.webp",
         "badge": [
             "stars",
-            "Premium"
+            "高级功能"
         ]
     },
     {
@@ -47,16 +47,16 @@
         "img": "translator.webp"
     },
     {
-        "title": "Checker：先进的语法和拼写工具",
+        "title": "Checker：先进的语法和拼写检查工具",
         "texts": [
-            "利用AI进行全面的写作错误检测和纠正，确保无懈可击的结果。"
+            "AI驱动的写作错误检测工具，消灭语法与拼写错误。"
         ],
         "img": "checker.webp"
     },
     {
         "title": "与Overleaf的深度整合",
         "texts": [
-            "自定义界面放置和大小，以适应多样的工作流程。"
+            "自定义界面布局和大小，以适应多样的工作流程。"
         ],
         "img": "interface.webp"
     },
@@ -77,7 +77,7 @@
     {
         "title": "增强的富文本渲染支持",
         "texts": [
-            "轻松在富文本和源代码模式之间切换，以获得最佳视图。"
+            "轻松在富文本和源代码模式之间切换。"
         ],
         "img": "rich_render.webp"
     }

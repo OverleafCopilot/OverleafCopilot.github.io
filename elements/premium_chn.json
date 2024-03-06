@@ -35,7 +35,7 @@
             }
         },
         {
-            "title": "Premium",
+            "title": "高级",
             "style": "primary",
             "price": "¥4.99",
             "span": "7天",
@@ -61,7 +61,7 @@
             }
         },
         {
-            "title": "Premium+",
+            "title": "高级+",
             "style": "warning",
             "price": "¥14.99",
             "span": "30天",
