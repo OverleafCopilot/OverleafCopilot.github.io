@@ -1,0 +1,21 @@
+{
+    "title": [
+        {
+            "text": "Overleaf",
+            "color": "#408827"
+        },
+        {
+            "text": "Copilot",
+            "color": "#ff7300"
+        },
+        {
+            "text": "Agents",
+            "color": "#039BE5"
+        }
+    ],
+    "slogan": "一键安装最前沿的Agent，轻松升级您的Copilot。",
+    "agent_title": {
+        "featured": "特色Agent",
+        "default": "默认Agent"
+    }
+}

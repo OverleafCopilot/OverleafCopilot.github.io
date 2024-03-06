@@ -1,0 +1,35 @@
+[
+    {
+        "title": "OpenAI Proxy：轻松访问GPT-3.5和GPT-4",
+        "texts": [
+            "直接访问OpenAI模型，无需API密钥。"
+        ],
+        "img": "proxy.webp",
+        "badge": [
+            "stars",
+            "Premium"
+        ]
+    },
+    {
+        "title": "特色Agent：先进Agent的持续进化",
+        "texts": [
+            "一键轻松升级您的Copilot，安装最前沿的Agent。"
+        ],
+        "img": "agents.webp",
+        "badge": [
+            "stars",
+            "Premium"
+        ]
+    },
+    {
+        "title": "Completer：为您编写下一句",
+        "texts": [
+            "上下文感知的句子补全或续写。"
+        ],
+        "img": "completor.webp",
+        "badge": [
+            "stars",
+            "Premium"
+        ]
+    }
+]

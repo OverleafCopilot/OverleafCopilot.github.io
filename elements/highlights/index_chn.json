@@ -1,0 +1,84 @@
+[
+    {
+        "title": "OpenAI Proxy：轻松访问GPT-3.5和GPT-4",
+        "texts": [
+            "直接访问OpenAI模型，无需API密钥。"
+        ],
+        "img": "proxy.webp",
+        "badge": [
+            "stars",
+            "Premium"
+        ]
+    },
+    {
+        "title": "特色Agent：先进Agent的持续进化",
+        "texts": [
+            "一键轻松升级您的Copilot，安装最前沿的Agent。"
+        ],
+        "img": "agents.webp",
+        "badge": [
+            "stars",
+            "Premium"
+        ]
+    },
+    {
+        "title": "Completer：为您编写下一句",
+        "texts": [
+            "上下文感知的句子补全或续写。"
+        ],
+        "img": "completor.webp",
+        "badge": [
+            "stars",
+            "Premium"
+        ]
+    },
+    {
+        "title": "Rewriter：一键优化您的论文",
+        "texts": [
+            "轻松将您的草稿完善成精美的学术作品。"
+        ],
+        "img": "rewriter.webp"
+    },
+    {
+        "title": "Translator：翻译学术论文的上佳选择",
+        "texts": [
+            "准确保留学术语调和具体术语，超越标准翻译工具。"
+        ],
+        "img": "translator.webp"
+    },
+    {
+        "title": "Checker：先进的语法和拼写工具",
+        "texts": [
+            "利用AI进行全面的写作错误检测和纠正，确保无懈可击的结果。"
+        ],
+        "img": "checker.webp"
+    },
+    {
+        "title": "与Overleaf的深度整合",
+        "texts": [
+            "自定义界面放置和大小，以适应多样的工作流程。"
+        ],
+        "img": "interface.webp"
+    },
+    {
+        "title": "高度可定制的界面",
+        "texts": [
+            "自定义界面主题，以契合您的风格和偏好。"
+        ],
+        "img": "theme.webp"
+    },
+    {
+        "title": "可定制的模型和提示",
+        "texts": [
+            "根据您的特定需求定制ChatGPT模型和提示词。"
+        ],
+        "img": "models_prompts.webp"
+    },
+    {
+        "title": "增强的富文本渲染支持",
+        "texts": [
+            "轻松在富文本和源代码模式之间切换，以获得最佳视图。"
+        ],
+        "img": "rich_render.webp"
+    }
+]

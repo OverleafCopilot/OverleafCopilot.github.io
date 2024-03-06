@@ -1,0 +1,89 @@
+{
+    "title": [
+        {
+            "text": "Overleaf",
+            "color": "#408827"
+        },
+        {
+            "text": "Copilot",
+            "color": "#ff7300"
+        },
+        {
+            "text": "Premium",
+            "color": "#8c0000"
+        }
+    ],
+    "slogan": "少喝一杯奶茶，多发一篇论文。",
+    "pricing": [
+        {
+            "title": "Free",
+            "style": "secondary",
+            "price": "¥0",
+            "desc": [
+                [
+                    "需要OpenAI API密钥：是",
+                    "高质量默认提示词",
+                    "可定制提示词",
+                    "与Overleaf无缝集成"
+                ]
+            ],
+            "button": {
+                "text": "开始使用",
+                "url": "https://chromewebstore.google.com/detail/overleaf-copilot/eoadabdpninlhkkbhngoddfjianhlghb",
+                "style": "outline-primary"
+            }
+        },
+        {
+            "title": "Premium",
+            "style": "primary",
+            "price": "¥4.99",
+            "span": "7天",
+            "desc": [
+                [
+                    "需要OpenAI API密钥：否",
+                    "高质量默认提示词",
+                    "可定制提示词",
+                    "与Overleaf无缝集成"
+                ],
+                [
+                    " 访问GPT-4 ",
+                    " 不限数量Agent ",
+                    " 可定制快捷方式 ",
+                    " 高级代理更新 ",
+                    " 包含100 Credit "
+                ]
+            ],
+            "button": {
+                "text": "购买",
+                "url": "https://item.taobao.com/item.htm?ft=t&id=756329846221",
+                "style": "primary"
+            }
+        },
+        {
+            "title": "Premium+",
+            "style": "warning",
+            "price": "¥14.99",
+            "span": "30天",
+            "desc": [
+                [
+                    "需要OpenAI API密钥：否",
+                    "高质量默认提示词",
+                    "可定制提示词",
+                    "与Overleaf无缝集成"
+                ],
+                [
+                    " 访问GPT-4 ",
+                    " 不限数量Agent ",
+                    " 可定制快捷方式 ",
+                    " 高级代理更新 ",
+                    " 包含400 Credit "
+                ]
+            ],
+            "button": {
+                "text": "购买",
+                "url": "https://item.taobao.com/item.htm?ft=t&id=760277782033",
+                "style": "warning"
+            }
+        }
+    ]
+}

@@ -1,16 +1,14 @@
-const alert_toast = bootstrap.Toast.getOrCreateInstance($('#alert-toast'));
+fetch(`elements/agents_${lang_code}.json`).then((response) => response.json()).then(({ title, slogan, agent_title }) => {
+    title.forEach(({ text, color }, i) => {
+        var span = $(`<span class="mx-1" style="color:${color};">${text}</span>`);
+        $('#title').append(span);
+    })
 
-function showAlert(content) {
-    $('#toast-content').text(content);
-    alert_toast.show();
-}
+    $('#slogan').text(slogan);
 
-agents['title'].forEach(({ text, color }, i) => {
-    var span = $(`<span class="mx-1" style="color:${color};">${text}</span>`);
-    $('#title').append(span);
+    $('#featured-agents-title').text(agent_title['featured']);
+    $('#default-agents-title').text(agent_title['default']);
 })
-
-$('#slogan').text(agents['slogan']);
 
 render_agent_row('agents/featured/indexes.json', 'featured-agent-row', 'featured-agent-col')
 render_agent_row('agents/default/indexes.json', 'default-agent-row', 'default-agent-col')

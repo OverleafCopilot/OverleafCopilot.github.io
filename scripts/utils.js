@@ -1,3 +1,12 @@
+var lang_code = 'eng';
+if ((navigator.language || navigator.userLanguage).indexOf('zh') === 0) {
+    lang_code = 'chn';
+}
+var saved_lang_code = get_cookie('lang_code');
+if (saved_lang_code !== "" && saved_lang_code !== undefined) {
+    lang_code = saved_lang_code;
+}
+
 function masonry_reload(parent_dom, item_selector) {
     parent_dom.masonry({
         itemSelector: item_selector,
@@ -43,7 +52,7 @@ function render_highlight_row(indexes, row_id, col_class) {
             card_body.append(card_title).append(card_text);
 
             var card = $('<div class="card shadow-sm">');
-            card.append(`<img src="highlights/images/${img}" class="card-img-top img-fluid rounded-start" alt="${img}">`);
+            card.append(`<img src="elements/highlights/images/${img}" class="card-img-top img-fluid rounded-start" alt="${img}">`);
             card.append(card_body);
             $(`#${row_id}`).append($(`<div class="col ${col_class}">`).append(card));
 
@@ -87,13 +96,13 @@ function render_agent_row(indexes, row_id, col_class) {
             var card_btn_row = $(`
                 <div class="d-flex flex-row flex-nowrap align-items-stretch gap-2">
                     <div class="col">
-                        <button class="btn btn-outline-info w-100 h-100 px-0 copy-temp-btn">Copy Source</button>
+                        <button class="btn btn-sm btn-outline-info w-100 h-100 px-0 copy-temp-btn">Copy Source</button>
                     </div>
                     <div class="col">
-                        <button class="btn btn-info w-100 h-100 px-0 copy-agent-btn">Copy Agent</button>
+                        <button class="btn btn-sm btn-info w-100 h-100 px-0 copy-agent-btn">Copy Agent</button>
                     </div>
                     <div class="col">
-                        <button class="btn btn-warning w-100 h-100 px-0 install-btn"
+                        <button class="btn btn-sm btn-warning w-100 h-100 px-0 install-btn"
                         data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Install agent directly into your Copilot.">
                             <i class="bi bi-archive me-1"></i><span>Install</span>
                         </button>
@@ -128,4 +137,32 @@ function render_agent_row(indexes, row_id, col_class) {
         masonry_reload($(`#${row_id}`), `.${col_class}`)
         masonry_reload_on_images($(`#${row_id}`), `.${col_class}`)
     })
+}
+
+function set_cookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function get_cookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function showAlert(content) {
+    $('#toast-content').text(content);
+    bs_alert_toast.show();
 }

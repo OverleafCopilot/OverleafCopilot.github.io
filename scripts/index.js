@@ -1,29 +1,31 @@
-index['title'].forEach(({ text, color }, i) => {
-    var span = $(`<span class="mx-1" style="color:${color};">${text}</span>`);
-    $('#title').append(span);
-})
+fetch(`elements/index_${lang_code}.json`).then((response) => response.json()).then(({ title, slogan, head_imgs, buttons }) => {
+    title.forEach(({ text, color }, i) => {
+        var span = $(`<span class="mx-1" style="color:${color};">${text}</span>`);
+        $('#title').append(span);
+    })
 
-$('#slogan').text(index['slogan']);
+    $('#slogan').text(slogan);
 
-index['buttons'].forEach(({ url, text, icon, style, tooltip }, i) => {
-    var button = $(`
-        <button type="button" class="btn btn-${style} btn-lg"
-            onClick="javascript:window.open('${url}', '_blank');"
-            data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="${tooltip}">
-            <i class="bi bi-${icon} pe-2"></i><span>${text}</span>
-        </button>
-    `);
-    if (tooltip) {
-        new bootstrap.Tooltip(button);
+    buttons.forEach(({ url, text, icon, style, tooltip }, i) => {
+        var button = $(`
+            <button type="button" class="btn btn-${style} btn-lg"
+                onClick="javascript:window.open('${url}', '_blank');"
+                data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="${tooltip}">
+                <i class="bi bi-${icon} pe-2"></i><span>${text}</span>
+            </button>
+        `);
+        if (tooltip) {
+            new bootstrap.Tooltip(button);
+        }
+        $('#button-row').append(button);
+    })
+
+    for (var key in head_imgs) {
+        $(`#headline-${key}`).attr('src', `images/${head_imgs[key]}`)
     }
-    $('#button-row').append(button);
 })
 
-for (var key in index['head_imgs']) {
-    $(`#headline-${key}`).attr('src', `images/${index['head_imgs'][key]}`)
-}
-
-render_highlight_row('highlights/index.json', 'function-row', 'function-col');
+render_highlight_row(`elements/highlights/index_${lang_code}.json`, 'function-row', 'function-col');
 
 $('#play-btn').on('click', () => {
     $('#video-overlay').removeClass('d-none');

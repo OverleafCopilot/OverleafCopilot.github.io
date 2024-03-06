@@ -1,0 +1,21 @@
+{
+    "title": [
+        {
+            "text": "Overleaf",
+            "color": "#408827"
+        },
+        {
+            "text": "Copilot",
+            "color": "#ff7300"
+        },
+        {
+            "text": "Agents",
+            "color": "#039BE5"
+        }
+    ],
+    "slogan": "Upgrade your Copilot effortlessly by installing cutting-edge agents with just a click.",
+    "agent_title": {
+        "featured": "Featured Agents",
+        "default": "Default Agents"
+    }
+}
