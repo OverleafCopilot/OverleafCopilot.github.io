@@ -1,4 +1,5 @@
-fetch(`elements/index_${lang_code}.json`).then((response) => response.json()).then(({ title, slogan, head_imgs, buttons }) => {
+fetch(`elements/index_${lang_code}.json`).then((response) => response.json()).then(({ page_title, title, slogan, head_imgs, buttons }) => {
+    $('head title').text(page_title);
     title.forEach(({ text, color }, i) => {
         var span = $(`<span class="mx-1" style="color:${color};">${text}</span>`);
         $('#title').append(span);

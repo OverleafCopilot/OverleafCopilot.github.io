@@ -1,4 +1,5 @@
-fetch(`elements/premium_${lang_code}.json`).then((response) => response.json()).then(({ title, slogan, pricing }) => {
+fetch(`elements/premium_${lang_code}.json`).then((response) => response.json()).then(({ page_title, title, slogan, pricing }) => {
+    $('head title').text(page_title);
     title.forEach(({ text, color }, i) => {
         var span = $(`<span class="mx-1" style="color:${color};">${text}</span>`);
         $('#title').append(span);
