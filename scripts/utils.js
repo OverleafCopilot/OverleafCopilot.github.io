@@ -43,7 +43,7 @@ function render_highlight_row(indexes, row_id, col_class) {
             card_body.append(card_title).append(card_text);
 
             var card = $('<div class="card shadow-sm">');
-            card.append(`<img src="images/${img}" class="card-img-top img-fluid rounded-start" alt="${img}">`);
+            card.append(`<img src="highlights/images/${img}" class="card-img-top img-fluid rounded-start" alt="${img}">`);
             card.append(card_body);
             $(`#${row_id}`).append($(`<div class="col ${col_class}">`).append(card));
 

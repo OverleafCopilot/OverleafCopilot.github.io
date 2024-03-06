@@ -5,7 +5,7 @@ premium_license['title'].forEach(({ text, color }, i) => {
 
 $('#slogan').text(premium_license['slogan']);
 
-render_highlight_row('data/premium_highlights.json', 'function-row', 'function-col');
+render_highlight_row('highlights/premium.json', 'function-row', 'function-col');
 
 premium_license['pricing'].forEach(({ title, style, price, span, desc, button }) => {
     var card = $(`<div class="card w-100 mb-4 rounded-3 shadow-sm border-${style}">`)

@@ -23,7 +23,7 @@ for (var key in index['head_imgs']) {
     $(`#headline-${key}`).attr('src', `images/${index['head_imgs'][key]}`)
 }
 
-render_highlight_row('data/index_highlights.json', 'function-row', 'function-col');
+render_highlight_row('highlights/index.json', 'function-row', 'function-col');
 
 $('#play-btn').on('click', () => {
     $('#video-overlay').removeClass('d-none');
