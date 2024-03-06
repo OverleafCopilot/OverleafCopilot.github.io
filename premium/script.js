@@ -1,4 +1,4 @@
-fetch(`elements/premium_${lang_code}.json`).then((response) => response.json()).then(({ page_title, title, slogan, pricing }) => {
+fetch(`./elements_${lang_code}.json`).then((response) => response.json()).then(({ page_title, title, slogan, pricing, highlights }) => {
     $('head title').text(page_title);
     title.forEach(({ text, color }, i) => {
         var span = $(`<span class="mx-1" style="color:${color};">${text}</span>`);
@@ -32,6 +32,7 @@ fetch(`elements/premium_${lang_code}.json`).then((response) => response.json()).
         `));
         $('#prices').append($('<div class="col d-flex align-self-stretch px-2">').append(card.append(card_header).append(card_body)));
     })
+
+    render_highlight_row(highlights, 'function-row', 'function-col');
 })
 
-render_highlight_row(`elements/highlights/premium_${lang_code}.json`, 'function-row', 'function-col');

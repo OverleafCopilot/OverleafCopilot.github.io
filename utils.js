@@ -40,34 +40,32 @@ function masonry_reload_on_images(parent_dom, item_selector) {
     })
 }
 
-function render_highlight_row(indexes, row_id, col_class) {
-    fetch(indexes).then((response) => response.json()).then((highlights) => {
-        highlights.forEach(({ title, texts, img, badge }, i) => {
-            var card_body = $('<div class="card-body">');
-            var card_title = $(`<h5 class="card-title">${title}</h5>`);
-            var card_text = $('<div class="card-text">');
-            texts.forEach((text) => {
-                card_text.append(`<p class="mb-0 mt-1 small text-secondary">${text}</p>`);
-            })
-            card_body.append(card_title).append(card_text);
-
-            var card = $('<div class="card shadow-sm">');
-            card.append(`<img src="elements/highlights/images/${img}" class="card-img-top img-fluid rounded-start" alt="${img}">`);
-            card.append(card_body);
-            $(`#${row_id}`).append($(`<div class="col ${col_class}">`).append(card));
-
-            if (badge) {
-                var float_badge = $(`
-                    <span class="badge text-bg-warning position-absolute" style="top: 1%; right: 1%; opacity: 75%">
-                    <i class="bi bi-${badge[0]} pe-1"></i>${badge[1]}</span>
-                `)
-                card.append(float_badge)
-            }
+function render_highlight_row(highlights, row_id, col_class) {
+    highlights.forEach(({ title, texts, img, badge }, i) => {
+        var card_body = $('<div class="card-body">');
+        var card_title = $(`<h5 class="card-title">${title}</h5>`);
+        var card_text = $('<div class="card-text">');
+        texts.forEach((text) => {
+            card_text.append(`<p class="mb-0 mt-1 small text-secondary">${text}</p>`);
         })
+        card_body.append(card_title).append(card_text);
 
-        masonry_reload($(`#${row_id}`), `.${col_class}`)
-        masonry_reload_on_images($(`#${row_id}`), `.${col_class}`)
+        var card = $('<div class="card shadow-sm">');
+        card.append(`<img src="/images/${img}" class="card-img-top img-fluid rounded-start" alt="${img}">`);
+        card.append(card_body);
+        $(`#${row_id}`).append($(`<div class="col ${col_class}">`).append(card));
+
+        if (badge) {
+            var float_badge = $(`
+                <span class="badge text-bg-warning position-absolute" style="top: 1%; right: 1%; opacity: 75%">
+                <i class="bi bi-${badge[0]} pe-1"></i>${badge[1]}</span>
+            `)
+            card.append(float_badge)
+        }
     })
+
+    masonry_reload($(`#${row_id}`), `.${col_class}`)
+    masonry_reload_on_images($(`#${row_id}`), `.${col_class}`)
 }
 
 function render_agent_row(indexes, row_id, col_class) {

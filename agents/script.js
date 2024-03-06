@@ -1,4 +1,4 @@
-fetch(`elements/agents_${lang_code}.json`).then((response) => response.json()).then(({ page_title, title, slogan, agent_title }) => {
+fetch(`./elements_${lang_code}.json`).then((response) => response.json()).then(({ page_title, title, slogan, agent_title }) => {
     $('head title').text(page_title);
     title.forEach(({ text, color }, i) => {
         var span = $(`<span class="mx-1" style="color:${color};">${text}</span>`);
@@ -11,8 +11,8 @@ fetch(`elements/agents_${lang_code}.json`).then((response) => response.json()).t
     $('#default-agents-title').text(agent_title['default']);
 })
 
-render_agent_row('agents/featured/indexes.json', 'featured-agent-row', 'featured-agent-col')
-render_agent_row('agents/default/indexes.json', 'default-agent-row', 'default-agent-col')
+render_agent_row('/agents/featured/indexes.json', 'featured-agent-row', 'featured-agent-col')
+render_agent_row('/agents/default/indexes.json', 'default-agent-row', 'default-agent-col')
 
 async function copyTemp(source) {
     // urls with file:// indicates that the source file is packaged with the extension

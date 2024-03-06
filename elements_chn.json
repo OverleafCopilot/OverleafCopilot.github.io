@@ -1,0 +1,124 @@
+{
+    "page_title": "OverleafCopilot - 学术写作助手",
+    "title": [
+        {
+            "text": "Overleaf",
+            "color": "#408827"
+        },
+        {
+            "text": "Copilot",
+            "color": "#ff7300"
+        }
+    ],
+    "slogan": "无缝整合ChatGPT与Overleaf，实现论文质量与速度的双重飞跃",
+    "head_imgs": {
+        "sm": "headline_sm.webp",
+        "md": "headline_lg.webp",
+        "lg": "headline_xl.webp"
+    },
+    "buttons": [
+        {
+            "url": "https://chromewebstore.google.com/detail/overleaf-copilot/eoadabdpninlhkkbhngoddfjianhlghb",
+            "text": "添加到浏览器",
+            "icon": "browser-chrome",
+            "tooltip": "兼容Chrome, Edge, Opera, Arc等Chromium内核浏览器",
+            "style": "primary"
+        },
+        {
+            "url": "./agents",
+            "text": "特色Agents",
+            "icon": "robot",
+            "style": "outline-danger"
+        },
+        {
+            "url": "./premium",
+            "text": "高级License",
+            "icon": "stars",
+            "style": "outline-primary"
+        }
+    ],
+    "highlights": [
+        {
+            "title": "OpenAI Proxy：轻松访问GPT-3.5和GPT-4",
+            "texts": [
+                "直接访问OpenAI模型，无需API密钥。"
+            ],
+            "img": "proxy.webp",
+            "badge": [
+                "stars",
+                "高级功能"
+            ]
+        },
+        {
+            "title": "特色Agent：先进Agent的持续进化",
+            "texts": [
+                "一键安装最前沿的Agent，轻松升级您的Copilot。"
+            ],
+            "img": "agents.webp",
+            "badge": [
+                "stars",
+                "高级功能"
+            ]
+        },
+        {
+            "title": "Completer：为您编写新内容",
+            "texts": [
+                "上下文感知的句子补全或续写。"
+            ],
+            "img": "completor.webp",
+            "badge": [
+                "stars",
+                "高级功能"
+            ]
+        },
+        {
+            "title": "Rewriter：一键优化您的论文",
+            "texts": [
+                "轻松将您的草稿完善成精美的学术作品。"
+            ],
+            "img": "rewriter.webp"
+        },
+        {
+            "title": "Translator：翻译学术论文的上佳选择",
+            "texts": [
+                "准确保留学术语调和具体术语，超越标准翻译工具。"
+            ],
+            "img": "translator.webp"
+        },
+        {
+            "title": "Checker：先进的语法和拼写检查工具",
+            "texts": [
+                "AI驱动的写作错误检测工具，消灭语法与拼写错误。"
+            ],
+            "img": "checker.webp"
+        },
+        {
+            "title": "与Overleaf的深度整合",
+            "texts": [
+                "自定义界面布局和大小，以适应多样的工作流程。"
+            ],
+            "img": "interface.webp"
+        },
+        {
+            "title": "高度可定制的界面",
+            "texts": [
+                "自定义界面主题，以契合您的风格和偏好。"
+            ],
+            "img": "theme.webp"
+        },
+        {
+            "title": "可定制的模型和提示",
+            "texts": [
+                "根据您的特定需求定制ChatGPT模型和提示词。"
+            ],
+            "img": "models_prompts.webp"
+        },
+        {
+            "title": "增强的富文本渲染支持",
+            "texts": [
+                "轻松在富文本和源代码模式之间切换。"
+            ],
+            "img": "rich_render.webp"
+        }
+    ]
+}

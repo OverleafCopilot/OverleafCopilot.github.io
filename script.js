@@ -1,4 +1,4 @@
-fetch(`elements/index_${lang_code}.json`).then((response) => response.json()).then(({ page_title, title, slogan, head_imgs, buttons }) => {
+fetch(`./elements_${lang_code}.json`).then((response) => response.json()).then(({ page_title, title, slogan, head_imgs, buttons, highlights }) => {
     $('head title').text(page_title);
     title.forEach(({ text, color }, i) => {
         var span = $(`<span class="mx-1" style="color:${color};">${text}</span>`);
@@ -24,9 +24,10 @@ fetch(`elements/index_${lang_code}.json`).then((response) => response.json()).th
     for (var key in head_imgs) {
         $(`#headline-${key}`).attr('src', `images/${head_imgs[key]}`)
     }
+
+    render_highlight_row(highlights, 'function-row', 'function-col');
 })
 
-render_highlight_row(`elements/highlights/index_${lang_code}.json`, 'function-row', 'function-col');
 
 $('#play-btn').on('click', () => {
     $('#video-overlay').removeClass('d-none');
