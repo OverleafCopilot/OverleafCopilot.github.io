@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Rewriter",
+        "icon": "mdi-text-box-edit-outline",
+        "desc": "Academic Rewriter: let Copilot help you polish your paragraph",
+        "level": 0,
+        "author": "The Overleaf Copilot Team",
+        "source": "file://agents/rewriter.xml",
+        "private": true,
+        "version": "0.5.15",
+        "contact": "QQ Group: 314373462"
+    },
+    {
+        "name": "Translator",
+        "icon": "mdi-text-recognition",
+        "desc": "Translate your paragraph: swipe to translate, as simple as chatting",
+        "level": 0,
+        "author": "The Overleaf Copilot Team",
+        "source": "file://agents/translator.xml",
+        "private": true,
+        "version": "0.5.15",
+        "contact": "QQ Group: 314373462"
+    },
+    {
+        "name": "Checker",
+        "icon": "mdi-text-search-variant",
+        "desc": "Grammar Checker: spelling errors, grammar errors, improper vocabulary, SOLVED IN ONE GO!",
+        "level": 0,
+        "author": "The Overleaf Copilot Team",
+        "source": "file://agents/checker.xml",
+        "private": true,
+        "version": "0.5.15",
+        "contact": "QQ Group: 314373462"
+    },
+    {
+        "name": "Adviser",
+        "icon": "mdi-text-box-search-outline",
+        "desc": "Academic Adviser: give you advice like a mentor, check your review column",
+        "level": 0,
+        "author": "The Overleaf Copilot Team",
+        "source": "file://agents/adviser.xml",
+        "private": true,
+        "version": "0.5.15",
+        "contact": "QQ Group: 314373462"
+    },
+    {
+        "name": "Completer",
+        "icon": "mdi-draw-pen",
+        "desc": "Paper Completer: let Copilot help you finish your paper, swipe to complete",
+        "level": 0,
+        "author": "The Overleaf Copilot Team",
+        "source": "file://agents/completer.xml",
+        "private": true,
+        "version": "0.5.15",
+        "contact": "QQ Group: 314373462"
+    }
+]

@@ -1,0 +1,45 @@
+<agent name="Adviser">
+	<icon mdi="text-box-search-outline" />
+	<desc>
+		Academic Adviser
+	</desc>
+	<model temperature="0.7">
+		gpt-3.5-turbo
+	</model>
+	<preset>
+		<workspace>
+			<toolbar>
+				<actions>
+					<action>
+						<icon mdi="cursor-text" />
+						<desc>
+							Switch Rich Area Mode
+						</desc>
+						<func>
+							<fire event="richarea.switch" />
+						</func>
+					</action>
+					<action preset="clear" />
+					<action preset="copy" />
+				</actions>
+			</toolbar>
+			<richarea mode="render" switch="richarea.switch" />
+		</workspace>
+		<bindings>
+			<keydown scope="window" key="control.alt./" present="true">
+				<fire event="richarea.switch" />
+			</keydown>
+		</bindings>
+	</preset>
+	<pre-action>
+		<panel-expand />
+	</pre-action>
+	<prompt>
+		<system>
+			I hope you act like a professional academic adviser.I want you to provide some advice on the given content. To improve the overall flow, clarity in terms of the content's language. Here is the input:
+		</system>
+		<user>
+			<input />
+		</user>
+	</prompt>
+</agent>

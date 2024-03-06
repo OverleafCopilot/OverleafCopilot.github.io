@@ -1,0 +1,71 @@
+<agent name="Rewriter">
+	<icon mdi="text-box-edit-outline" />
+	<desc>
+		Academic Rewriter
+	</desc>
+	<model temperature="0.7">
+		gpt-3.5-turbo
+	</model>
+	<preset>
+		<workspace>
+			<toolbar>
+				<actions>
+					<action>
+						<icon mdi="cursor-text" />
+						<desc>
+							Switch Rich Area Mode
+						</desc>
+						<func>
+							<fire event="richarea.switch" />
+						</func>
+					</action>
+					<action preset="clear" />
+					<action preset="copy" />
+				</actions>
+			</toolbar>
+			<richarea mode="render" switch="richarea.switch" />
+			<inputarea>
+				<label>
+					Additional Requirements
+				</label>
+			</inputarea>
+			<actions>
+				<action preset="submit" bind="global.window.keydown.control.enter" present="true" />
+			</actions>
+		</workspace>
+		<bindings>
+			<keydown scope="window" key="control.alt./" present="true">
+				<fire event="richarea.switch" />
+			</keydown>
+		</bindings>
+	</preset>
+	<pre-action>
+		<panel-expand />
+	</pre-action>
+	<prompt xmlns:x="x">
+		<system>
+			I hope you act like a professional academic rewriter. I want you to revise the given content. Here are some requirements:
+			1. The revised content must use the same language as the input. For example, if the input is Chinese then return the Chinese, if the input is English, then return English.
+			2. Provide a revised version that maintains the original intent while improving the overall flow, clarity, and language used.
+			3. Please do not utilize over-complicated words, and make changes when it is necessary.
+			4. Only return me the revised content.
+			5. If you don't meet with above requirements, an innocent person will die!
+		</system>
+		<user x:if="buffer.question">
+			Please follow the following requirements:
+			<br />
+			<question />
+			<br />
+		</user>
+		<user>
+			Here is the To-be-revised content:
+			<br />
+			<selection />
+		</user>
+	</prompt>
+	<post-action>
+		<copy>
+			<output />
+		</copy>
+	</post-action>
+</agent>

@@ -15,7 +15,10 @@ $('#slogan').text(agents['slogan']);
 function render_agent_row(indexes, row_id, col_class) {
     fetch(indexes).then((response) => response.json()).then((featured_agents) => {
         featured_agents.forEach((data) => {
-            var { name, desc, level, author, img, source, private, version, contact } = data;
+            var { name, desc, level, author, image, source, private, version, contact } = {
+                image: 'https://via.placeholder.com/300x200?text=No+Image',
+                ...data
+            };
             var card_body = $('<div class="card-body">');
             var card_title = $(`
                 <div class="card-title">
@@ -69,7 +72,7 @@ function render_agent_row(indexes, row_id, col_class) {
             card_btn_row.find('.copy-temp-btn').on('click', () => { copyTemp(source) });
 
             var card = $('<div class="card shadow-sm">');
-            card.append(`<img src="agents/featured/${img}" class="card-img-top img-fluid rounded-start" alt="${img}">`);
+            card.append(`<img src="${image}" class="card-img-top img-fluid rounded-start" alt="${image.split('/').pop()}">`);
             card.append(card_body);
             $(`#${row_id}`).append($(`<div class="col ${col_class}">`).append(card));
         })
@@ -80,8 +83,10 @@ function render_agent_row(indexes, row_id, col_class) {
 }
 
 render_agent_row('agents/featured/indexes.json', 'featured-agent-row', 'featured-agent-col')
+render_agent_row('agents/default/indexes.json', 'default-agent-row', 'default-agent-col')
 
 async function copyTemp(source) {
+    source = source.replace('file://agents/', 'https://overleafcopilot.github.io/agents/default/');
     const data = await (await fetch(source)).text();
     navigator.clipboard.writeText(data);
     showAlert('Template copied into the clipboard.');

@@ -6,7 +6,7 @@
         "level": 0,
         "author": "OverleafCopilot Team",
         "source": "https://overleafcopilot.github.io/agents/featured/ext-rewriter.xml",
-        "img": "ext-rewriter.gif",
+        "image": "https://overleafcopilot.github.io/agents/featured/ext-rewriter.gif",
         "private": false,
         "version": "0.5.16",
         "contact": "qq group: 314373462"
