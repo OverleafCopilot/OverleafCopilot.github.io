@@ -14,7 +14,7 @@ var footer = $(`
     <div class="container-xxl" id="footer-container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 mb-4 border-top">
             <p class="col-md-4 mb-0 text-body-secondary" id="copyright">© OverleafCopilot Team</p>
-            <img src="favicon.ico" style="width: 30px;">
+            <img src="/favicon.ico" style="width: 30px;">
             <ul class="nav col-md-4 justify-content-end" id="footer-links"></ul>
         </footer>
     </div>
