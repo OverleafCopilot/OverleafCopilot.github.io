@@ -2,7 +2,7 @@
     {
         "name": "Rewriter",
         "icon": "mdi-text-box-edit-outline",
-        "desc": "Academic Rewriter: let Copilot help you polish your paragraph",
+        "desc": "Academic Rewriter: Polish you contents powered by high-quality prompts.",
         "level": 0,
         "author": "The Overleaf Copilot Team",
         "source": "file://agents/default/rewriter.xml",
@@ -13,7 +13,7 @@
     {
         "name": "Translator",
         "icon": "mdi-text-recognition",
-        "desc": "Translate your paragraph: swipe to translate, as simple as chatting",
+        "desc": "Translate your paragraph: AI-powered translator that preserves academic tone and specific terminology effectively.",
         "level": 0,
         "author": "The Overleaf Copilot Team",
         "source": "file://agents/default/translator.xml",
@@ -24,7 +24,7 @@
     {
         "name": "Checker",
         "icon": "mdi-text-search-variant",
-        "desc": "Grammar Checker: spelling errors, grammar errors, improper vocabulary, SOLVED IN ONE GO!",
+        "desc": "Grammar Checker: Leverage AI for comprehensive detection and correction of writing errors.",
         "level": 0,
         "author": "The Overleaf Copilot Team",
         "source": "file://agents/default/checker.xml",
@@ -35,7 +35,7 @@
     {
         "name": "Adviser",
         "icon": "mdi-text-box-search-outline",
-        "desc": "Academic Adviser: give you advice like a mentor, check your review column",
+        "desc": "Academic Adviser: AI-powered virtual mentor for providing high-level modification suggestions.",
         "level": 0,
         "author": "The Overleaf Copilot Team",
         "source": "file://agents/default/adviser.xml",
@@ -46,7 +46,7 @@
     {
         "name": "Completer",
         "icon": "mdi-draw-pen",
-        "desc": "Paper Completer: let Copilot help you finish your paper, swipe to complete",
+        "desc": "Sentence Completer: Complete or extend your sentences with context-aware suggestions.",
         "level": 0,
         "author": "The Overleaf Copilot Team",
         "source": "file://agents/default/completer.xml",

@@ -2,7 +2,7 @@
     {
         "name": "Enhanced Rewriter",
         "icon": "mdi-text-box-edit-outline",
-        "desc": "An academic rewriter of high quality, featuring intuitive highlights on modifications.",
+        "desc": "Enhanced Academic Rewriter: An academic rewriter of high quality, featuring intuitive highlights on modifications.",
         "level": 0,
         "author": "OverleafCopilot Team",
         "source": "https://overleafcopilot.github.io/agents/featured/ext-rewriter.xml",
