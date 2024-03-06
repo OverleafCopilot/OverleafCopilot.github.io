@@ -59,10 +59,13 @@ function render_agent_row(indexes, row_id, col_class) {
             var install_btn = card_btn_row.find('.install-btn');
             install_btn.on('click', () => {
                 if (window.registerAgentIndex) {
-                    registerAgentIndex(data);
-                    showAlert('Agent installed into the Copilot.');
-                    install_btn.addClass('disabled');
-                    install_btn.find('span').text('Installed');
+                    registerAgentIndex(data).then(() => {
+                        showAlert('Agent installed into the Copilot.');
+                        install_btn.addClass('disabled');
+                        install_btn.find('span').text('Installed');
+                    }).catch(() => {
+                        showAlert('Failed to install the agent into the Copilot.');
+                    });
                 } else {
                     showAlert('No Copilot detected in your browser.');
                 }
@@ -86,6 +89,7 @@ render_agent_row('agents/featured/indexes.json', 'featured-agent-row', 'featured
 render_agent_row('agents/default/indexes.json', 'default-agent-row', 'default-agent-col')
 
 async function copyTemp(source) {
+    // urls with file:// indicates that the source file is packaged with the extension
     source = source.replace('file://agents/', 'https://overleafcopilot.github.io/agents/default/');
     const data = await (await fetch(source)).text();
     navigator.clipboard.writeText(data);
