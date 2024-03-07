@@ -35,7 +35,7 @@ var footer_links = {
     "eng": [
         {
             "text": "Home",
-            "url": "./index.html"
+            "url": "/"
         },
         {
             "text": "Contact",
@@ -53,7 +53,7 @@ var footer_links = {
     "chn": [
         {
             "text": "首页",
-            "url": "./index.html"
+            "url": "/"
         },
         {
             "text": "联系",
