@@ -14,6 +14,13 @@
     <script src="/modules/bootstrap.bundle.min.js"></script>
     <script src="/modules/jquery-3.7.1.min.js"></script>
     <script src="/modules/masonry.pkgd.min.js"></script>
+
+    <style>
+        .university-logo {
+            width: 100px;
+            height: auto;
+        }
+    </style>
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -65,12 +72,21 @@
     <div class="container-xxl my-4">
         <div class="row row-cols-1 row-cols-md-2 row-cols-xxl-3 g-3" id="function-row"></div>
     </div>
+    <div class="container-xxl my-4">
+        <hr>
+        <div class="text-center">
+            <p class="lead" id="university-title"></p>
+        </div>
+        <div class="w-100">
+            <div class="d-flex flex-wrap gap-2 justify-content-center" id="university-logo-row"></div>
+        </div>
+    </div>
 </body>
 
 <script src="/utils.js"></script>
 <script src="/footer.js"></script>
 <script>
-    fetch(`./elements_${lang_code}.json`).then((response) => response.json()).then(({ page_title, title, slogan, head_imgs, buttons, highlights }) => {
+    fetch(`./elements_${lang_code}.json`).then((response) => response.json()).then(({ page_title, title, slogan, head_imgs, buttons, uni_title, highlights }) => {
         $('head title').text(page_title);
         title.forEach(({ text, color }, i) => {
             var span = $(`<span class="mx-1" style="color:${color};">${text}</span>`);
@@ -97,9 +113,10 @@
             $(`#headline-${key}`).attr('src', `images/${head_imgs[key]}`)
         }
 
+        $('#university-title').text(uni_title);
+
         render_highlight_row(highlights, 'function-row', 'function-col');
     })
-
 
     $('#play-btn').on('click', () => {
         $('#video-overlay').removeClass('d-none');
@@ -111,5 +128,13 @@
         $('#video-overlay').addClass('d-none');
         $('#video-overlay').removeClass('d-flex');
         $('#demo-video').trigger('pause');
+    })
+
+    const logo_dir = '/images/university_logos'
+    $.ajax({ url: logo_dir }).then((data) => {
+        $(data).find("a:contains('.webp')").each((i, logo) => {
+            const logo_src = $(logo).attr('href');
+            $('#university-logo-row').append(`<img src="${logo_dir}/${logo_src}" class="university-logo">`)
+        })
     })
 </script>
