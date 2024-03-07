@@ -37,7 +37,43 @@
             "style": "outline-primary"
         }
     ],
-    "uni_title": "已在40+所高校内被使用！",
+    "universities": {
+        "title": "已在40+所高校内被使用！",
+        "logos": [
+            "1200px-Nankai_University_logo.svg.webp",
+            "1200px-Tsinghua_University_Logo.svg.webp",
+            "AAU-blue.webp",
+            "Beihang_University_logo.webp",
+            "Beijing_Institute_of_Technology_F.C.svg.webp",
+            "Beijing_Jiaotong_University.webp",
+            "BUPT_LOGO.webp",
+            "China_academy_of_art.svg.webp",
+            "Danmarks_Tekniske_Universitet_(logo).webp",
+            "DLUT_logo.webp",
+            "East_China_Normal_University_logo.webp",
+            "Emblem_of_CU.webp",
+            "Fudan_University_Logo.svg.webp",
+            "Harbin_Institute_of_Technology_(crest).webp",
+            "Hefei_University_of_Technology_logo.webp",
+            "Jilin_University_logo.webp",
+            "Logo_of_ShanghaiTech_University.webp",
+            "Logo_of_University_of_Science_and_Technology_of_China.svg.webp",
+            "NJUST_logo.svg.webp",
+            "NUAA_logo.webp",
+            "Peking_University_seal.svg.webp",
+            "Renmin_University_of_China_logo.svg.webp",
+            "Seal_of_the_Chinese_Academy_of_Sciences.webp",
+            "Sjtu-logo-standard-red.webp",
+            "Stanford-University-Logo-500x281.webp",
+            "Sun_Yat-sen_University_Logo.webp",
+            "TJU_logo.webp",
+            "University_of_Notre_Dame_seal_(2).svg.webp",
+            "Westlake_University_Wordmark.webp",
+            "Wuhan_University_Logo.webp",
+            "Wuhan_University_of_Technology_logo.webp",
+            "Zhejiang_University_Logo.svg.webp"
+        ]
+    },
     "highlights": [
         {
             "title": "OpenAI Proxy：轻松访问GPT-3.5和GPT-4",

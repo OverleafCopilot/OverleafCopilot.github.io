@@ -86,7 +86,7 @@
 <script src="/utils.js"></script>
 <script src="/footer.js"></script>
 <script>
-    fetch(`./elements_${lang_code}.json`).then((response) => response.json()).then(({ page_title, title, slogan, head_imgs, buttons, uni_title, highlights }) => {
+    fetch(`./elements_${lang_code}.json`).then((response) => response.json()).then(({ page_title, title, slogan, head_imgs, buttons, universities, highlights }) => {
         $('head title').text(page_title);
         title.forEach(({ text, color }, i) => {
             var span = $(`<span class="mx-1" style="color:${color};">${text}</span>`);
@@ -113,7 +113,10 @@
             $(`#headline-${key}`).attr('src', `images/${head_imgs[key]}`)
         }
 
-        $('#university-title').text(uni_title);
+        $('#university-title').text(universities['title']);
+        universities['logos'].forEach((logo) => {
+            $('#university-logo-row').append(`<img src="/images/university_logos/${logo}" class="university-logo">`)
+        })
 
         render_highlight_row(highlights, 'function-row', 'function-col');
     })
@@ -128,13 +131,5 @@
         $('#video-overlay').addClass('d-none');
         $('#video-overlay').removeClass('d-flex');
         $('#demo-video').trigger('pause');
-    })
-
-    const logo_dir = '/images/university_logos'
-    $.ajax({ url: logo_dir }).then((data) => {
-        $(data).find("a:contains('.webp')").each((i, logo) => {
-            const logo_src = $(logo).attr('href');
-            $('#university-logo-row').append(`<img src="${logo_dir}/${logo_src}" class="university-logo">`)
-        })
     })
 </script>
