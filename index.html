@@ -54,7 +54,7 @@
         <div class="display-4 fw-bold text-body-emphasis d-flex flex-wrap justify-content-center" id="title">
         </div>
         <div class="mx-auto px-3 mb-4 mt-2">
-            <p class="lead" id="slogan"></p>
+            <p class="h4" id="slogan"></p>
         </div>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mx-3" id="button-row"></div>
         <div class="col-12 mx-auto mt-4 position-relative xxxl-media" id="headline">
@@ -79,6 +79,9 @@
         </div>
         <div class="w-100">
             <div class="d-flex flex-wrap gap-2 justify-content-center" id="university-logo-row"></div>
+        </div>
+        <div class="text-end">
+            <p class="small text-secondary" id="university-note"></p>
         </div>
     </div>
 </body>
@@ -117,6 +120,7 @@
         universities['logos'].forEach((logo) => {
             $('#university-logo-row').append(`<img src="/images/university_logos/${logo}" class="university-logo">`)
         })
+        $('#university-note').text(universities['note']);
 
         render_highlight_row(highlights, 'function-row', 'function-col');
     })
