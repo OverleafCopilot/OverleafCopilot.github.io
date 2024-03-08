@@ -1,0 +1,35 @@
+{
+    "copyright": "OverleafCopilot团队",
+    "links": [
+        {
+            "text": "首页",
+            "url": "/"
+        },
+        {
+            "text": "联系",
+            "url": "javascript: bs_contact_modal.show();"
+        },
+        {
+            "text": "开发者首页",
+            "url": "https://logan-lin.github.io/"
+        },
+        {
+            "text": "PromptGenius",
+            "url": "https://www.promptgenius.site/"
+        }
+    ],
+    "contact": {
+        "title": "联系我们",
+        "links": [
+            {
+                "text": "开发者邮箱",
+                "url": "mailto: linyanwd@icloud.com",
+                "icon": "envelope"
+            },
+            {
+                "text": "答疑QQ群: 314373462",
+                "icon": "tencent-qq"
+            }
+        ]
+    }
+}

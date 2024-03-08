@@ -48,7 +48,7 @@
 </body>
 
 <script src="/utils.js"></script>
-<script src="/footer.js"></script>
+<script src="/footer/script.js"></script>
 <script>
     fetch(`./elements_${lang_code}.json`).then((response) => response.json()).then(({ page_title, title, slogan, agent_title }) => {
         $('head title').text(page_title);

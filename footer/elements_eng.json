@@ -1,0 +1,35 @@
+{
+    "copyright": "OverleafCopilot Team",
+    "links": [
+        {
+            "text": "Home",
+            "url": "/"
+        },
+        {
+            "text": "Contact",
+            "url": "javascript: bs_contact_modal.show();"
+        },
+        {
+            "text": "Dev's Page",
+            "url": "https://logan-lin.github.io/"
+        },
+        {
+            "text": "PromptGenius",
+            "url": "https://www.promptgenius.site/"
+        }
+    ],
+    "contact": {
+        "title": "Contact",
+        "links": [
+            {
+                "text": "Dev's Email",
+                "url": "mailto: linyanwd@icloud.com",
+                "icon": "envelope"
+            },
+            {
+                "text": "Tencent QQ Group: 314373462",
+                "icon": "tencent-qq"
+            }
+        ]
+    }
+}
