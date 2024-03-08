@@ -10,6 +10,16 @@ lang_switch_btn.on('click', () => {
     location.reload();
 })
 
+if (location.pathname != '/') {
+    var back_btn = $(`
+        <button class="btn btn-sm btn-outline-primary position-absolute top-0 end-0 m-2"
+        onClick="javascript: location.href='/';">
+            <i class="bi bi-house"></i>
+        </button>
+    `);
+    $('body').append(back_btn);
+}
+
 var alert_toast = $(`
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="alert-toast" class="toast text-bg-primary" role="alert">
@@ -64,8 +74,7 @@ fetch(`/footer/elements_${lang_code}.json`).then((response) => response.json()).
     contact['links'].forEach(({ text, url, icon }) => {
         var p = $(`<span><i class="bi bi-${icon}"></i> ${text}</span>`);
         if (url) {
-            p = $('<button class="btn btn-outline-dark">').append(p);
-            p.on('click', () => { location.href = url; })
+            p = $(`<button class="btn btn-outline-dark" onClick="javascript: location.href='${url}';">`).append(p);
         }
         contact_modal.find('.modal-body div').append(p);
     })

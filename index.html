@@ -101,7 +101,7 @@
         buttons.forEach(({ url, text, icon, style, tooltip }, i) => {
             var button = $(`
                 <button type="button" class="btn btn-${style} btn-lg"
-                    onClick="javascript:window.open('${url}', '_blank');"
+                    onClick="javascript:location.href='${url}';"
                     data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="${tooltip}">
                     <i class="bi bi-${icon} pe-2"></i><span>${text}</span>
                 </button>

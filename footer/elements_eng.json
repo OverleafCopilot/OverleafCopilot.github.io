@@ -2,10 +2,6 @@
     "copyright": "OverleafCopilot Team",
     "links": [
         {
-            "text": "Home",
-            "url": "/"
-        },
-        {
             "text": "Contact",
             "url": "javascript: bs_contact_modal.show();"
         },

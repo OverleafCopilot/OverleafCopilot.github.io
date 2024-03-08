@@ -2,10 +2,6 @@
     "copyright": "OverleafCopilot团队",
     "links": [
         {
-            "text": "首页",
-            "url": "/"
-        },
-        {
             "text": "联系",
             "url": "javascript: bs_contact_modal.show();"
         },
