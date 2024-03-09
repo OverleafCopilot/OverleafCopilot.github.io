@@ -31,7 +31,8 @@
             "button": {
                 "text": "Start Using",
                 "url": "https://chromewebstore.google.com/detail/overleaf-copilot/eoadabdpninlhkkbhngoddfjianhlghb",
-                "style": "outline-primary"
+                "style": "outline-primary",
+                "tooltip": "Download Extension from the Chrome Web Store"
             }
         },
         {
@@ -57,7 +58,8 @@
             "button": {
                 "text": "Buy",
                 "url": "https://item.taobao.com/item.htm?ft=t&id=756329846221",
-                "style": "primary"
+                "style": "primary",
+                "tooltip": "Buy from Taobao.com. More convenient way of payment for non-CN users will be introduced soon."
             }
         },
         {
@@ -83,7 +85,8 @@
             "button": {
                 "text": "Buy",
                 "url": "https://item.taobao.com/item.htm?ft=t&id=760277782033",
-                "style": "warning"
+                "style": "warning",
+                "tooltip": "Buy from Taobao.com. More convenient way of payment for non-CN users will be introduced soon."
             }
         }
     ],

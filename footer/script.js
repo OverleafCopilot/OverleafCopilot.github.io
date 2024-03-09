@@ -12,9 +12,9 @@ lang_switch_btn.on('click', () => {
 
 if (location.pathname != '/') {
     var back_btn = $(`
-        <button class="btn btn-sm btn-outline-primary position-absolute top-0 end-0 m-2"
+        <button class="btn btn-sm btn-outline-dark position-absolute top-0 end-0 m-2"
         onClick="javascript: location.href='/';">
-            <i class="bi bi-house"></i>
+            <i class="bi bi-house-fill"></i>
         </button>
     `);
     $('body').append(back_btn);

@@ -31,7 +31,8 @@
             "button": {
                 "text": "开始使用",
                 "url": "https://chromewebstore.google.com/detail/overleaf-copilot/eoadabdpninlhkkbhngoddfjianhlghb",
-                "style": "outline-primary"
+                "style": "outline-primary",
+                "tooltip": "前往Chrome应用商店下载插件"
             }
         },
         {
@@ -57,7 +58,8 @@
             "button": {
                 "text": "购买",
                 "url": "https://item.taobao.com/item.htm?ft=t&id=756329846221",
-                "style": "primary"
+                "style": "primary",
+                "tooltip": "前往淘宝购买"
             }
         },
         {
@@ -83,7 +85,8 @@
             "button": {
                 "text": "购买",
                 "url": "https://item.taobao.com/item.htm?ft=t&id=760277782033",
-                "style": "warning"
+                "style": "warning",
+                "tooltip": "前往淘宝购买"
             }
         }
     ],
