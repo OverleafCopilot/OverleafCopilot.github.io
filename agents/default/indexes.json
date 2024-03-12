@@ -5,7 +5,7 @@
         "desc": "Academic Rewriter: Polish you contents powered by high-quality prompts.",
         "level": 0,
         "author": "The Overleaf Copilot Team",
-        "source": "file://agents/default/rewriter.xml",
+        "source": "file://agents/rewriter.xml",
         "private": true,
         "version": "0.5.15",
         "contact": "QQ Group: 314373462"
@@ -16,7 +16,7 @@
         "desc": "Translate your paragraph: AI-powered translator that preserves academic tone and specific terminology effectively.",
         "level": 0,
         "author": "The Overleaf Copilot Team",
-        "source": "file://agents/default/translator.xml",
+        "source": "file://agents/translator.xml",
         "private": true,
         "version": "0.5.15",
         "contact": "QQ Group: 314373462"
@@ -27,7 +27,7 @@
         "desc": "Grammar Checker: Leverage AI for comprehensive detection and correction of writing errors.",
         "level": 0,
         "author": "The Overleaf Copilot Team",
-        "source": "file://agents/default/checker.xml",
+        "source": "file://agents/checker.xml",
         "private": true,
         "version": "0.5.15",
         "contact": "QQ Group: 314373462"
@@ -38,7 +38,7 @@
         "desc": "Academic Adviser: AI-powered virtual mentor for providing high-level modification suggestions.",
         "level": 0,
         "author": "The Overleaf Copilot Team",
-        "source": "file://agents/default/adviser.xml",
+        "source": "file://agents/adviser.xml",
         "private": true,
         "version": "0.5.15",
         "contact": "QQ Group: 314373462"
@@ -49,7 +49,7 @@
         "desc": "Sentence Completer: Complete or extend your sentences with context-aware suggestions.",
         "level": 0,
         "author": "The Overleaf Copilot Team",
-        "source": "file://agents/default/completer.xml",
+        "source": "file://agents/completer.xml",
         "private": true,
         "version": "0.5.15",
         "contact": "QQ Group: 314373462"
