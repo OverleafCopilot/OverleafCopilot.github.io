@@ -42,10 +42,7 @@
                 style="font-size: 1.5em; opacity: 0.7; z-index: 4;">
                 <i class="bi bi-x-lg"></i>
             </button>
-            <video controls class="w-100" id="demo-video" style="z-index: 3;">
-                <source src="videos/demo.webm" type="video/webm" />
-                <source src="videos/demo.mp4" type="video/mp4" />
-            </video>
+            <video controls class="w-100" id="demo-video" style="z-index: 3;"></video>
         </div>
     </div>
 
@@ -89,7 +86,7 @@
 <script src="/utils.js"></script>
 <script src="/footer/script.js"></script>
 <script>
-    fetch(`./elements_${lang_code}.json`).then((response) => response.json()).then(({ page_title, title, slogan, head_imgs, buttons, universities, highlights }) => {
+    fetch(`./elements_${lang_code}.json`).then((response) => response.json()).then(({ page_title, title, slogan, head_imgs, demo_videos, buttons, universities, highlights }) => {
         $('head title').text(page_title);
         title.forEach(({ text, color }, i) => {
             var span = $(`<span class="mx-1" style="color:${color};">${text}</span>`);
@@ -115,6 +112,10 @@
         for (var key in head_imgs) {
             $(`#headline-${key}`).attr('src', `images/${head_imgs[key]}`)
         }
+
+        demo_videos.forEach(({ source, type }) => {
+            $('#demo-video').append(`<source src="videos/${source}" type="${type}" />`)
+        })
 
         $('#university-title').text(universities['title']);
         universities['logos'].forEach((logo) => {

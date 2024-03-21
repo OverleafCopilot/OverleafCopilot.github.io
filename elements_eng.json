@@ -16,6 +16,16 @@
         "md": "headline_lg.webp",
         "lg": "headline_xl.webp"
     },
+    "demo_videos": [
+        {
+            "source": "demo.webm",
+            "type": "video/webm"
+        },
+        {
+            "source": "demo.mp4",
+            "type": "video/mp4"
+        }
+    ],
     "buttons": [
         {
             "url": "https://chromewebstore.google.com/detail/overleaf-copilot/eoadabdpninlhkkbhngoddfjianhlghb",
