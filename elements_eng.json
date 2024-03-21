@@ -18,11 +18,11 @@
     },
     "demo_videos": [
         {
-            "source": "demo.webm",
+            "source": "demo_eng.webm",
             "type": "video/webm"
         },
         {
-            "source": "demo.mp4",
+            "source": "demo_eng.mp4",
             "type": "video/mp4"
         }
     ],
