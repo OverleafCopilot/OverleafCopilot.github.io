@@ -38,8 +38,8 @@
         {
             "title": "高级",
             "style": "primary",
-            "price": "¥4.99",
-            "span": "7天",
+            "price": "¥29.90",
+            "span": "30天",
             "desc": [
                 [
                     "需要OpenAI API密钥：否",
@@ -48,11 +48,10 @@
                     "与Overleaf无缝集成"
                 ],
                 [
-                    " 访问GPT-4 ",
+                    " 无限制使用GPT-3.5 ",
                     " 不限数量Agent ",
                     " 可定制快捷方式 ",
-                    " 高级代理更新 ",
-                    " 包含100 Credit "
+                    " 高级代理更新 "
                 ]
             ],
             "button": {
@@ -65,7 +64,7 @@
         {
             "title": "高级+",
             "style": "warning",
-            "price": "¥14.99",
+            "price": "¥59.90",
             "span": "30天",
             "desc": [
                 [
@@ -75,11 +74,11 @@
                     "与Overleaf无缝集成"
                 ],
                 [
-                    " 访问GPT-4 ",
+                    " GPT-4使用权限 ",
                     " 不限数量Agent ",
                     " 可定制快捷方式 ",
                     " 高级代理更新 ",
-                    " 包含400 Credit "
+                    " 包含1000Credit "
                 ]
             ],
             "button": {

@@ -38,8 +38,8 @@
         {
             "title": "Premium",
             "style": "primary",
-            "price": "¥4.99",
-            "span": "7Days",
+            "price": "¥29.90",
+            "span": "30Days",
             "desc": [
                 [
                     "Require OpenAI API Key: No",
@@ -48,11 +48,10 @@
                     "Fully integrated with Overleaf"
                 ],
                 [
-                    " Access to GPT-4 ",
+                    " Unlimited Access to GPT-3.5 ",
                     " Unlimited Agents ",
                     " Customizable shortcut ",
-                    " Update of Advanced Agents ",
-                    " 100 credits included "
+                    " Update of Advanced Agents "
                 ]
             ],
             "button": {
@@ -65,7 +64,7 @@
         {
             "title": "Premium+",
             "style": "warning",
-            "price": "¥14.99",
+            "price": "¥59.90",
             "span": "30Days",
             "desc": [
                 [
@@ -79,7 +78,7 @@
                     " Unlimited Agents ",
                     " Customizable shortcut ",
                     " Update of Advanced Agents ",
-                    " 400 credits included "
+                    " 1000 credits included "
                 ]
             ],
             "button": {
