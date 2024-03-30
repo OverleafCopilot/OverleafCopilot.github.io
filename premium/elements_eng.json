@@ -38,7 +38,7 @@
         {
             "title": "Premium",
             "style": "primary",
-            "price": "¥24.90",
+            "price": "$3.90",
             "span": "30Days",
             "desc": [
                 [
@@ -56,15 +56,16 @@
             ],
             "button": {
                 "text": "Buy",
-                "url": "https://item.taobao.com/item.htm?ft=t&id=756329846221",
+                "url": "https://api.overleafcopilot.com/stripe/create-checkout-session?prefix=30dGPT3&region=USA",
                 "style": "primary",
-                "tooltip": "Buy from Taobao.com. More convenient way of payment for non-CN users will be introduced soon."
+                "tooltip": "Pay with Stripe",
+                "type": "POST"
             }
         },
         {
             "title": "Premium+",
             "style": "warning",
-            "price": "¥59.90",
+            "price": "$9.90",
             "span": "30Days",
             "desc": [
                 [
@@ -83,9 +84,10 @@
             ],
             "button": {
                 "text": "Buy",
-                "url": "https://item.taobao.com/item.htm?ft=t&id=760277782033",
+                "url": "https://api.overleafcopilot.com/stripe/create-checkout-session?prefix=30dGPT4&region=USA",
                 "style": "warning",
-                "tooltip": "Buy from Taobao.com. More convenient way of payment for non-CN users will be introduced soon."
+                "tooltip": "Pay with Stripe",
+                "type": "POST"
             }
         }
     ],

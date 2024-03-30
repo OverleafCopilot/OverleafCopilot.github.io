@@ -13,6 +13,7 @@
     <script src="/modules/bootstrap.bundle.min.js"></script>
     <script src="/modules/jquery-3.7.1.min.js"></script>
     <script src="/modules/masonry.pkgd.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESFM9J4MVL"></script>
@@ -74,13 +75,24 @@
                 if (i < desc.length - 1) { func_list.append('<hr class="my-2">'); }
             })
 
-            var btn = $(`
-                <button type="button" class="w-100 mt-auto btn btn-lg btn-${button['style']}"
-                    data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="${button['tooltip']}"
-                    onClick="javascript:window.open('${button['url']}', '_blank');">
-                    ${button['text']}</button>
-            `);
-            new bootstrap.Tooltip(btn);
+            if (button['type'] === 'POST') {
+                var btn = $(`
+                    <form action="${button['url']}" method="POST">
+                        <button type="submit" action="submit" class="w-100 mt-auto btn btn-lg btn-${button['style']}"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="${button['tooltip']}">
+                            ${button['text']}</button>
+                    </form>
+                `);
+                new bootstrap.Tooltip(btn.children());
+            } else {
+                var btn = $(`
+                    <button type="button" class="w-100 mt-auto btn btn-lg btn-${button['style']}"
+                        data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="${button['tooltip']}"
+                        onClick="javascript:window.open('${button['url']}', '_blank');">
+                        ${button['text']}</button>
+                `);
+                new bootstrap.Tooltip(btn);
+            }
             card_body.append(card_title).append(func_list).append(btn);
             $('#prices').append($('<div class="col d-flex align-self-stretch px-2">').append(card.append(card_header).append(card_body)));
         })

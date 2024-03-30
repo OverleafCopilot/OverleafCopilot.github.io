@@ -56,9 +56,10 @@
             ],
             "button": {
                 "text": "购买",
-                "url": "https://item.taobao.com/item.htm?ft=t&id=756329846221",
+                "url": "https://api.overleafcopilot.com/stripe/create-checkout-session?prefix=30dGPT3&region=CHN",
                 "style": "primary",
-                "tooltip": "前往淘宝购买"
+                "tooltip": "使用Stripe支付",
+                "type": "POST"
             }
         },
         {
@@ -83,9 +84,10 @@
             ],
             "button": {
                 "text": "购买",
-                "url": "https://item.taobao.com/item.htm?ft=t&id=760277782033",
+                "url": "https://api.overleafcopilot.com/stripe/create-checkout-session?prefix=30dGPT4&region=CHN",
                 "style": "warning",
-                "tooltip": "前往淘宝购买"
+                "tooltip": "使用Stripe支付",
+                "type": "POST"
             }
         }
     ],
