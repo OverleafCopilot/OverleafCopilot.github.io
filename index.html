@@ -1,140 +1,719 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-site-verification" content="6vk-uezNzqjerXFfwWp7SgMDIU6JjNRWVXP3gVBJPGw" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <title>OverleafCopilot - Scholar writing copilot for Overleaf</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta charset="utf-8">
+  <title>OverleafCopilot - Let your idea speak</title>
 
-    <link href="/modules/bootstrap.min.css" rel="stylesheet">
-    <link href="/style.css" rel="stylesheet">
-    <script src="/modules/bootstrap.bundle.min.js"></script>
-    <script src="/modules/jquery-3.7.1.min.js"></script>
-    <script src="/modules/masonry.pkgd.min.js"></script>
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="OverleafCopilot: Seamlessly incorporate ChatGPT to power and accelerate academic writing in Overleaf.">
+  <meta name="keywords" content="overleaf, academic, chatgpt, chrome extension, ai">
+  <meta name="author" content="OverleafCopilot Team">
 
-    <style>
-        .university-logo {
-            width: 100px;
-            height: auto;
-        }
-    </style>
+  <!-- Viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Theme switcher (color modes) -->
+  <script src="assets/js/theme-switcher.js"></script>
+  <script src="assets/js/jquery-3.7.1.min.js"></script>
+
+  <!-- Favicon and Touch Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#6366f1">
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#080032">
+  <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Vendor Styles -->
+  <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css">
+  <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
+
+  <!-- Main Theme Styles + Bootstrap -->
+  <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- Page loading styles -->
+  <style>
+    .page-loading {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: all .4s .2s ease-in-out;
+      transition: all .4s .2s ease-in-out;
+      background-color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 9999;
+    }
+
+    [data-bs-theme="dark"] .page-loading {
+      background-color: #0b0f19;
+    }
+
+    .page-loading.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .page-loading-inner {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transition: opacity .2s ease-in-out;
+      transition: opacity .2s ease-in-out;
+      opacity: 0;
+    }
+
+    .page-loading.active>.page-loading-inner {
+      opacity: 1;
+    }
+
+    .page-loading-inner>span {
+      display: block;
+      font-size: 1rem;
+      font-weight: normal;
+      color: #9397ad;
+    }
+
+    [data-bs-theme="dark"] .page-loading-inner>span {
+      color: #fff;
+      opacity: .6;
+    }
+
+    .page-spinner {
+      display: inline-block;
+      width: 2.75rem;
+      height: 2.75rem;
+      margin-bottom: .75rem;
+      vertical-align: text-bottom;
+      border: .15em solid #b4b7c9;
+      border-right-color: transparent;
+      border-radius: 50%;
+      -webkit-animation: spinner .75s linear infinite;
+      animation: spinner .75s linear infinite;
+    }
+
+    [data-bs-theme="dark"] .page-spinner {
+      border-color: rgba(255, 255, 255, .4);
+      border-right-color: transparent;
+    }
+
+    @-webkit-keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+
+  <!-- Page loading scripts -->
+  <script>
+    (function () {
+      window.onload = function () {
+        const preloader = document.querySelector('.page-loading');
+        preloader.classList.remove('active');
+        setTimeout(function () {
+          preloader.remove();
+        }, 1000);
+      };
+    })();
+  </script>
 </head>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESFM9J4MVL"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
 
-    gtag('config', 'G-ESFM9J4MVL');
+  gtag('config', 'G-ESFM9J4MVL');
 </script>
+
+
+<!-- Body -->
 
 <body>
-    <div id="video-overlay"
-        class="justify-content-center align-items-center position-fixed top-0 start-0 w-100 h-100 d-none"
-        style="background-color: rgba(0, 0, 0, 0.7); z-index: 2;">
-        <div class="position-relative container-xxl">
-            <button class="btn btn-danger px-2 py-0 position-absolute top-0 end-0 m-4" id="close-video-btn"
-                style="font-size: 1.5em; opacity: 0.7; z-index: 4;">
-                <i class="bi bi-x-lg"></i>
-            </button>
-            <video controls class="w-100" id="demo-video" style="z-index: 3; max-height: 100vh;"></video>
-        </div>
-    </div>
 
-    <div class="text-center pt-5"
-        style="background-image: linear-gradient(to bottom, rgb(213, 236, 255), rgb(213, 255, 240));">
-        <div class="display-4 fw-bold text-body-emphasis d-flex flex-wrap justify-content-center" id="title">
+  <!-- Page loading spinner -->
+  <div class="page-loading active">
+    <div class="page-loading-inner">
+      <div class="page-spinner"></div><span>Loading...</span>
+    </div>
+  </div>
+
+
+  <!-- Page wrapper for sticky footer -->
+  <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+  <main class="page-wrapper">
+
+
+    <!-- Navbar -->
+    <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
+    <header class="header navbar navbar-expand-lg position-absolute navbar-sticky">
+      <div class="container px-3">
+        <a href="index.html" class="navbar-brand pe-3">
+          <img src="assets/favicon/favicon.ico" width="35" alt="OverleafCopilot">
+          <span class="mx-1" style="color:#408827;">Overleaf</span>
+          <span class="mx-1" style="color:#ff7300;">Copilot</span>
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+          <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="header-nav">
+              <li class="nav-item active">
+                <a href="#top" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="#premium" class="nav-link">Premium</a>
+              </li>
+              <li class="nav-item">
+                <a href="https://www.overleafcopilot.com/agents/" class="nav-link">Agents</a>
+              </li>
+            </ul>
+          </div>
+          <div class="offcanvas-header border-top">
+            <a href="https://themes.getbootstrap.com/product/silicon-business-technology-template-ui-kit/"
+              class="btn btn-primary w-100" target="_blank" rel="noopener">
+              <i class="bi bi-browser-chrome fs-5 lh-1 me-1"></i>
+              Add to Browser
+            </a>
+          </div>
         </div>
-        <div class="mx-auto px-3 mb-4 mt-2">
-            <p class="h4" id="slogan"></p>
+        <div class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4" data-bs-toggle="mode">
+          <input type="checkbox" class="form-check-input" id="theme-mode" checked>
+          <label class="form-check-label d-none d-sm-block" for="theme-mode">Light</label>
+          <label class="form-check-label d-none d-sm-block" for="theme-mode">Dark</label>
         </div>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mx-3" id="button-row"></div>
-        <div class="col-12 mx-auto mt-4 position-relative xxxl-media" id="headline">
-            <button class="btn btn-secondary px-2 py-0 position-absolute top-50 start-50 translate-middle" id="play-btn"
-                style="font-size: 3em; opacity: 0.7;">
-                <i class="bi bi-play-circle"></i>
-            </button>
-            <div id="headline-div">
-                <img class="d-block d-md-none w-100" id="headline-sm">
-                <img class="d-none d-md-block d-xxl-none w-100" id="headline-md">
-                <img class="d-none d-xxl-block w-100" id="headline-lg">
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="https://chromewebstore.google.com/detail/overleaf-copilot/eoadabdpninlhkkbhngoddfjianhlghb"
+          class="btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex" target="_blank" rel="noopener">
+          <i class="bi bi-browser-chrome fs-5 lh-1 me-1"></i>
+          Add to Browser
+        </a>
+      </div>
+    </header>
+
+
+    <!-- Hero section -->
+    <section class="position-relative pt-5 overflow-hidden" id="top" data-bs-spy="scroll" data-bs-target="#navbar-nav"
+      data-bs-smooth-scroll="true">
+      <span class="position-absolute top-0 start-0 d-dark-mode-none d-block w-100 h-100 bg-secondary"></span>
+      <span class="position-absolute top-0 start-0 d-dark-mode-block d-none w-100 h-100"
+        style="background: radial-gradient(84.79% 172.9% at 73.31% 31.4%, rgba(99, 135, 241, .1) 0%, rgba(218, 70, 239, .05) 52.47%, rgba(99, 135, 241, .1) 100%);">
+        <span class="d-block w-100 h-100 bg-position-center bg-size-cover bg-repeat-0"
+          style="background-image: url(assets/img/landing/saas-4/hero-bg.png);"></span>
+      </span>
+      <div class="container position-relative mt-5 pt-xl-5 pt-md-3 zindex-5">
+        <div class="row justify-content-md-start justify-content-center flex-md-nowrap pt-lg-5 pt-4">
+          <div
+            class="col-xl-5 col-md-6 col-sm-10 d-flex flex-column justify-content-between mb-md-5 mb-md-4 mb-3 pb-xl-5 pb-lg-4">
+            <div class="text-md-start text-center">
+              <h1 class="display-4 mb-lg-4 mb-3">Let your idea speak.</h1>
+              <p class="mb-4 mx-md-0 mx-auto pb-xl-3 pb-lg-2 fs-lg" style="max-width: 30.5rem;">
+                Seamlessly incorporate ChatGPT to power and accelerate academic writing in Overleaf.
+              </p>
+              <a href="https://chromewebstore.google.com/detail/overleaf-copilot/eoadabdpninlhkkbhngoddfjianhlghb"
+                class="btn btn-lg btn-primary">Start Using</a>
             </div>
+            <ul
+              class="list-unstyled row row-cols-2 gy-sm-2 gy-1 gx-sm-4 gx-2 mt-lg-5 mt-4 mx-md-0 mx-auto pt-lg-0 pt-md-2 mb-md-5 mb-4 pb-xl-4 pb-lg-3 pb-md-2 pb-sm-0 pb-2 text-nowrap"
+              style="max-width: 23.625rem;">
+              <li class="col d-flex align-items-start">
+                <i class="bx bx-check-circle me-2 fs-5 text-primary"></i>
+                Access to GPT4
+              </li>
+              <li class="col d-flex align-items-start">
+                <i class="bx bx-check-circle me-2 fs-5 text-primary"></i>
+                Free Trial
+              </li>
+              <li class="col d-flex align-items-start">
+                <i class="bx bx-check-circle me-2 fs-5 text-primary"></i>
+                Fully Integrated
+              </li>
+              <li class="col d-flex align-items-start">
+                <i class="bx bx-check-circle me-2 fs-5 text-primary"></i>
+                One-click Operation
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-12 offset-xl-1 d-flex mt-lg-4 mb-4">
+            <div class="align-self-end ms-xl-0 ms-md-4 p-lg-4 p-sm-3 p-2 rounded-4 overflow-hidden"
+              style="background: linear-gradient(153.32deg, rgba(255, 255, 255, .3) -65.62%, rgba(255, 255, 255, .1) 83.28%); box-shadow: 0 .25rem 1.5rem -.0625rem rgba(0, 0, 0, .2); backdrop-filter: blur(25px);">
+              <img src="assets/img/landing/home/headline.png" width="1122" alt="Layer" class="rounded-4"
+                style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+            </div>
+          </div>
         </div>
+      </div>
+      <span class="position-absolute bottom-0 start-0 w-100">
+        <span class="d-dark-mode-none d-block w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-light"></span>
+        <span class="d-dark-mode-block d-none w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-dark"></span>
+      </span>
+    </section>
+
+
+    <!-- About -->
+    <section class="container my-5 pt-xl-5 pt-lg-4 pt-md-3 pb-lg-5 pb-md-4 pb-3">
+      <h2 class="h1 mt-xl-3 mb-4 pb-3 text-center">Key Features</h2>
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs flex-nowrap justify-content-sm-center overflow-auto mb-lg-4 mb-3 pb-md-3 pb-2 text-nowrap"
+        role="tablist">
+        <li class="nav-item">
+          <a href="#openai-proxy" class="nav-link active" data-bs-toggle="tab" role="tab">
+            <i class="bx bx-network-chart opacity-60 me-2 fs-lg"></i>
+            OpenAI Proxy
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#featured-agents" class="nav-link" data-bs-toggle="tab" role="tab">
+            <i class="bi bi-robot opacity-60 me-2 fs-lg"></i>
+            Featured Agents
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#completor" class="nav-link" data-bs-toggle="tab" role="tab">
+            <i class="bx bx-edit-alt opacity-60 me-2 fs-lg"></i>
+            Completor
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#rewriter" class="nav-link" data-bs-toggle="tab" role="tab">
+            <i class="bx bx-refresh opacity-60 me-2 fs-lg"></i>
+            Rewriter
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#translator" class="nav-link" data-bs-toggle="tab" role="tab">
+            <i class="bi bi-translate opacity-60 me-2 fs-lg"></i>
+            Translator
+          </a>
+        </li>
+      </ul>
+
+      <!-- Tabs content -->
+      <div class="tab-content mb-xl-3 py-4 bg-secondary rounded-3 px-lg-5">
+
+        <div class="tab-pane fade show active" id="openai-proxy" role="tabpanel">
+          <div class="row align-items-center pt-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
+            <div class="col-lg-5 col-md-6 text-center text-md-start">
+              <h3 class="h2 mb-lg-4 mb-3">Effortless Access to ChatGPT Models</h3>
+              <p class="mb-4 pb-lg-3">Access OpenAI models directly without the need for an API key, offering
+                straightforward and immediate use.</p>
+              <a href="#premium" class="btn btn-primary mb-4 mb-lg-0">Learn more</a>
+            </div>
+            <div class="col-lg-7 col-md-8">
+              <video autoplay="" playsinline="" muted="" loop="" class="d-block mx-auto rounded-4" width="100%">
+                <source src="assets/video/openai proxy.mp4" type="video/mp4;">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="featured-agents" role="tabpanel">
+          <div class="row align-items-center pt-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
+            <div class="col-lg-5 col-md-6 text-center text-md-start">
+              <h3 class="h2 mb-lg-4 mb-3">Ongoing Evolution of Advanced Agents</h3>
+              <p class="mb-4 pb-lg-3">Upgrade your Copilot effortlessly by installing cutting-edge agents with just a
+                click.</p>
+              <a href="https://www.overleafcopilot.com/agents/" class="btn btn-primary mb-4 mb-lg-0">Learn more</a>
+            </div>
+            <div class="col-lg-7 col-md-8">
+              <video autoplay="" playsinline="" muted="" loop="" class="d-block mx-auto rounded-4" width="100%">
+                <source src="assets/video/featured agents.mp4" type="video/mp4;">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="completor" role="tabpanel">
+          <div class="row align-items-center pt-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
+            <div class="col-lg-5 col-md-6 text-center text-md-start">
+              <h3 class="h2 mb-lg-4 mb-3">Crafting the Next Sentence for You</h3>
+              <p class="mb-4 pb-lg-3">Complete or extend your sentences with context-aware suggestions.</p>
+            </div>
+            <div class="col-lg-7 col-md-8">
+              <video autoplay="" playsinline="" muted="" loop="" class="d-block mx-auto rounded-4" width="100%">
+                <source src="assets/video/completor.mp4" type="video/mp4;">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="rewriter" role="tabpanel">
+          <div class="row align-items-center pt-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
+            <div class="col-lg-5 col-md-6 text-center text-md-start">
+              <h3 class="h2 mb-lg-4 mb-3">Enhance Your Content with a Single Click</h3>
+              <p class="mb-4 pb-lg-3">Easily refine your drafts into polished academic works.</p>
+            </div>
+            <div class="col-lg-7 col-md-8">
+              <video autoplay="" playsinline="" muted="" loop="" class="d-block mx-auto rounded-4" width="100%"
+                poster="https://github.githubassets.com/assets/hero-poster-18f705106687.webp">
+                <source src="assets/video/rewriter.mp4" type="video/mp4;">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="translator" role="tabpanel">
+          <div class="row align-items-center pt-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
+            <div class="col-lg-5 col-md-6 text-center text-md-start">
+              <h3 class="h2 mb-lg-4 mb-3">The Superior Choice for Academic Papers</h3>
+              <p class="mb-4 pb-lg-3">Outperforms standard translation tools by preserving the academic tone and
+                specific terminology effectively.</p>
+            </div>
+            <div class="col-lg-7 col-md-8">
+              <video autoplay="" playsinline="" muted="" loop="" class="d-block mx-auto rounded-4" width="100%"
+                poster="https://github.githubassets.com/assets/hero-poster-18f705106687.webp">
+                <source src="assets/video/translator.mp4" type="video/mp4;">
+              </video>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Integration -->
+    <section class="container mb-5 pb-lg-5 pb-md-4 pb-3">
+      <h2 class="h1 mb-lg-4 mb-3 text-center">Used by 40+ Universities and Institutions.</h2>
+      <!-- Swiper slider -->
+      <div class="swiper mt-n2 mb-xl-2 mx-n2" data-swiper-options='{
+          "pagination": {
+            "el": ".swiper-pagination",
+            "clickable": true
+          },
+          "breakpoints": {
+            "0": {
+              "slidesPerView": 5,
+              "spaceBetween": 5
+            },
+            "600": {
+              "slidesPerView": 9,
+              "spaceBetween": 7
+            },
+            "991": {
+              "slidesPerView": 11,
+              "spaceBetween": 9
+            },
+            "1200": {
+              "slidesPerView": 13,
+              "spaceBetween": 11
+            }
+          },
+          "autoplay": {
+            "delay": 1000,
+            "disableOnInteraction": false
+          }
+        }'>
+        <div class="swiper-wrapper" id="institutes"></div>
+
+        <!-- Pagination (bullets) -->
+        <div class="swiper-pagination position-static mt-4 pt-lg-3 pt-2"></div>
+      </div>
+    </section>
+
+
+    <!-- Price -->
+    <section class="bg-secondary py-5" id="premium" data-bs-spy="scroll" data-bs-target="#header-nav"
+      data-bs-smooth-scroll="true">
+      <div class="container mt-lg-5 my-md-4 my-3 py-xl-3">
+        <h2 class="h1 mb-md-4 mb-3 pb-lg-3 pb-2 text-center">Premium Licenses</h2>
+        <div class="price-switch-wrapper">
+
+          <!-- Price switch -->
+          <div class="form-check form-switch price-switch justify-content-center mb-md-4 mb-3 pb-lg-3 pb-2"
+            data-bs-toggle="price">
+            <input type="checkbox" class="form-check-input" id="pricing">
+            <label class="form-check-label" for="pricing">RMB</label>
+            <label class="form-check-label d-flex align-items-start" for="pricing">USD</label>
+          </div>
+
+          <!-- Price cards -->
+          <div class="table-responsive-lg pb-4">
+            <div class="d-flex align-items-center">
+
+              <!-- Pricing plan -->
+              <div class="border rounded-3 rounded-end-0 shadow-sm me-n1" style="width: 32%; min-width: 16rem;">
+                <div class="card bg-light h-100 border-0 border-end rounded-end-0 py-3 py-sm-4 py-lg-5">
+                  <div class="card-body text-center">
+                    <h3 class="mb-2">Free</h3>
+                    <div class="fs-md pb-4 mb-3">
+                      Bring your own OpenAI API Key<br>
+                      Practical default agents<br>
+                      High-quality default prompts<br>
+                      Customizable prompts<br>
+                      Fully integrated with Overleaf
+                    </div>
+                    <div class="display-5 text-dark mb-1" data-monthly-price>¥0</div>
+                    <div class="d-none display-5 text-dark mb-1" data-annual-price>$0</div>
+                    <div class="text-muted mb-5">Forever</div>
+                  </div>
+                  <div class="card-footer border-0 text-center pt-0 pb-4">
+                    <a href="https://chromewebstore.google.com/detail/overleaf-copilot/eoadabdpninlhkkbhngoddfjianhlghb"
+                      class="btn btn-outline-primary btn-lg">Start Using</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Featurd pricing plan -->
+              <div class="bg-primary position-relative rounded-3 shadow-primary shadow-dark-mode-none zindex-2 p-4"
+                style="width: 36%; min-width: 18rem;">
+                <div class="card bg-transparent border-light py-3 py-sm-4 py-lg-5">
+                  <div class="card-body text-light text-center">
+                    <h3 class="text-light mb-2">Premium</h3>
+                    <div class="fs-md opacity-70 pb-4 mb-3">
+                      <b>Unlimited Access to GPT-3.5</b><br>
+                      Unlimited Agents<br>
+                      Customizable shortcut<br>
+                      Update of Advanced Agents<br>
+                      All free tier benefits
+                    </div>
+                    <div class="display-5 mb-1" data-monthly-price>¥24.9</div>
+                    <div class="d-none display-5 mb-1" data-annual-price>$3.9</div>
+                    <div class="opacity-50 mb-5">per 30 days</div>
+                  </div>
+                  <div class="card-footer border-0 text-center pt-0 pb-4">
+                    <form
+                      action="https://api.overleafcopilot.com/stripe/create-checkout-session?prefix=30dGPT3&region=CHN"
+                      method="POST">
+                      <button type="submit" action="submit" class="btn btn-light btn-lg shadow-secondary"
+                        data-monthly-price>Buy</button>
+                    </form>
+                    <form
+                      action="https://api.overleafcopilot.com/stripe/create-checkout-session?prefix=30dGPT3&region=USA"
+                      method="POST">
+                      <button type="submit" action="submit" class="d-none btn btn-light btn-lg shadow-secondary"
+                        data-annual-price>Buy</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pricing plan -->
+              <div class="border rounded-3 rounded-start-0 shadow-sm" style="width: 32%; min-width: 16rem;">
+                <div class="card bg-light h-100 border-0 rounded-start-0 py-3 py-sm-4 py-lg-5">
+                  <div class="card-body text-center">
+                    <h3 class="mb-2">Premium+</h3>
+                    <div class="fs-md pb-4 mb-3">
+                      <b>Access to GPT-4</b><br>
+                      Unlimited Agents<br>
+                      Customizable shortcut<br>
+                      Update of Advanced Agents<br>
+                      1000 credits included<br>
+                      All free tier benefits
+                    </div>
+                    <div class="display-5 text-dark mb-1" data-monthly-price>¥59.9</div>
+                    <div class="d-none display-5 text-dark mb-1" data-annual-price>$9.9</div>
+                    <div class="text-muted mb-5">per 30 days</div>
+                  </div>
+                  <div class="card-footer border-0 text-center pt-0 pb-4">
+                    <form
+                      action="https://api.overleafcopilot.com/stripe/create-checkout-session?prefix=30dGPT4&region=CHN"
+                      method="POST">
+                      <button type="submit" action="submit" class="btn btn-outline-primary btn-lg"
+                        data-monthly-price>Buy</button>
+                    </form>
+                    <form
+                      action="https://api.overleafcopilot.com/stripe/create-checkout-session?prefix=30dGPT4&region=USA"
+                      method="POST">
+                      <button type="submit" action="submit" class="d-none btn btn-outline-primary btn-lg"
+                        data-annual-price>Buy</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-center">Payment powered by Stripe. Support credit card, Alipay, and Wechat Pay.
+            For invoice, please contact us.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="footer bg-dark py-5" data-bs-theme="dark">
+    <div class="container pt-2 pt-sm-4">
+      <div class="row">
+        <div class="col-md-6 col-lg-5 col-xl-4 pb-2 pb-sm-3 pb-md-0 mb-4 mb-md-0">
+          <div class="navbar-brand text-dark p-0 me-0 mb-3 mb-lg-4">
+            <img src="assets/favicon/favicon.ico" width="35" alt="Silicon">
+            OverleafCopilot Team
+          </div>
+          <p class="text-body mb-2">
+            We are a group of four computer science students with a shared goal of developing practical and
+            enjoyable software applications.
+          </p>
+          <p class="text-body mb-0">
+            If you have any questions or suggestions, please don't hesitate to reach out to us.
+          </p>
+        </div>
+        <div class="col-md-6 col-xxl-5 offset-lg-1 offset-xl-2 offset-xxl-3">
+          <div class="row row-cols-1 row-cols-sm-2">
+            <div class="col pb-2 pb-sm-0 mb-4 mb-sm-0">
+              <h3 class="h5 pb-1 pb-sm-2 pb-lg-3">Contact us</h3>
+              <ul class="nav flex-column mb-3">
+                <li>
+                  <a href="mailto:feedback@overleafcopilot.com" class="nav-link fs-lg fw-normal px-0 py-1">
+                    <i class="bx bx-envelope fs-4 me-2"></i>
+                    Feedback Email
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.yanlincs.com" class="nav-link fs-lg fw-normal px-0 py-1">
+                    <i class="bx bx-globe fs-4 me-2"></i>
+                    Dev's Homepage
+                  </a>
+                </li>
+              </ul>
+              <!-- <div class="d-flex pt-2 pt-sm-3 pt-md-4">
+                <a href="#" class="btn btn-icon btn-sm btn-secondary btn-facebook rounded-circle me-3"
+                  aria-label="Facebook">
+                  <i class="bx bxl-facebook"></i>
+                </a>
+                <a href="#" class="btn btn-icon btn-sm btn-secondary btn-linkedin rounded-circle me-3"
+                  aria-label="LinkedIn">
+                  <i class="bx bxl-linkedin"></i>
+                </a>
+                <a href="#" class="btn btn-icon btn-sm btn-secondary btn-telegram rounded-circle me-3"
+                  aria-label="Telegram">
+                  <i class="bx bxl-telegram"></i>
+                </a>
+                <a href="#" class="btn btn-icon btn-sm btn-secondary btn-youtube rounded-circle me-3"
+                  aria-label="YouTube">
+                  <i class="bx bxl-youtube"></i>
+                </a>
+              </div> -->
+            </div>
+            <div class="col ps-sm-4 ps-md-5">
+              <h3 class="h5 pb-1 pb-sm-2 pb-lg-3">Affiliate Links</h3>
+              <ul class="nav flex-column mb-3">
+                <li>
+                  <a href="https://www.promptgenius.site/" class="nav-link fs-lg fw-normal px-0 py-1">
+                    PromptGenius
+                  </a>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="nav d-block fs-sm pt-5 mb-0">
+        <span class="text-light opacity-60">&copy; All rights reserved.</span>
+      </p>
     </div>
-    <div class="container-xxl my-4">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-xxl-3 g-3" id="function-row"></div>
-    </div>
-    <div class="container-xxl my-4">
-        <hr>
-        <div class="text-center">
-            <p class="lead" id="university-title"></p>
-        </div>
-        <div class="w-100">
-            <div class="d-flex flex-wrap gap-2 justify-content-center" id="university-logo-row"></div>
-        </div>
-        <div class="text-end">
-            <p class="small text-secondary" id="university-note"></p>
-        </div>
-    </div>
+  </footer>
+
+
+  <!-- Back to top button -->
+  <a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+  </a>
+
+
+  <!-- Vendor Scripts -->
+  <script src="assets/vendor/parallax-js/dist/parallax.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main Theme Script -->
+  <script src="assets/js/theme.min.js"></script>
+
+  <script>
+    const inst_logos = [
+      "MIT-Logo.webp",
+      "Stanford-University-Logo-500x281.webp",
+      "1200px-Tsinghua_University_Logo.svg.webp",
+      "Peking_University_seal.svg.webp",
+      "Fudan_University_Logo.svg.webp",
+      "Tongji_Uni_logo.webp",
+      "Zhejiang_University_Logo.svg.webp",
+      "Sjtu-logo-standard-red.webp",
+      "Emblem_of_CU.webp",
+      "1200px-Nankai_University_logo.svg.webp",
+      "Logo_of_University_of_Science_and_Technology_of_China.svg.webp",
+      "Renmin_University_of_China_logo.svg.webp",
+      "Beihang_University_logo.webp",
+      "AAU-blue.webp",
+      "East_China_Normal_University_logo.webp",
+      "NUAA_logo.webp",
+      "Seal_of_the_Chinese_Academy_of_Sciences.webp",
+      "Beijing_Institute_of_Technology_F.C.svg.webp",
+      "Wuhan_University_Logo.webp",
+      "Beijing_Jiaotong_University.webp",
+      "BUPT_LOGO.webp",
+      "China_academy_of_art.svg.webp",
+      "Danmarks_Tekniske_Universitet_(logo).webp",
+      "DLUT_logo.webp",
+      "Harbin_Institute_of_Technology_(crest).webp",
+      "Hefei_University_of_Technology_logo.webp",
+      "Jilin_University_logo.webp",
+      "Logo_of_ShanghaiTech_University.webp",
+      "NJUST_logo.svg.webp",
+      "Sun_Yat-sen_University_Logo.webp",
+      "TJU_logo.webp",
+      "University_of_Notre_Dame_seal_(2).svg.webp",
+      "Wuhan_University_of_Technology_logo.webp",
+      "Westlake_University_Wordmark.webp",
+      "HONG KONG UNIVERSITY OF SCIENCE AND TECHNOLOGY.webp",
+      "Anhui_Polytechnic_University.webp",
+      "Inner Mongolia University of Science & Technology .webp",
+      "Lakehead University.webp",
+      "nii.webp",
+      "Shanghai University of Finance and Economics o.webp",
+      "China_University_of_Mining_and_Technology_logo.webp",
+      "ntu.webp",
+      "1200px-CityU_logo.webp",
+      "nus_logo_full-vertical.webp",
+      "gzhu.webp",
+      "TechnionLogo.webp",
+      "Logo-quadrato-testo.webp"
+    ];
+    inst_logos.forEach((logo) => {
+      $('#institutes').append(`
+      <div class="swiper-slide h-auto py-2">
+        <img src="assets/img/institutes/${logo}"
+          class="d-block my-0 mx-auto" width="85" alt="Institute">
+      </div>
+    `)
+    })
+
+    if ((navigator.language || navigator.userLanguage).indexOf('zh') !== 0) {
+    }
+  </script>
 </body>
 
-<script src="/utils.js"></script>
-<script src="/footer/script.js"></script>
-<script>
-    fetch(`./elements_${lang_code}.json`).then((response) => response.json()).then(({ page_title, title, slogan, head_imgs, demo_videos, buttons, universities, highlights }) => {
-        $('head title').text(page_title);
-        title.forEach(({ text, color }, i) => {
-            var span = $(`<span class="mx-1" style="color:${color};">${text}</span>`);
-            $('#title').append(span);
-        })
-
-        $('#slogan').text(slogan);
-
-        buttons.forEach(({ url, text, icon, style, tooltip }, i) => {
-            var button = $(`
-                <button type="button" class="btn btn-${style} btn-lg"
-                    onClick="javascript:location.href='${url}';"
-                    data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="${tooltip}">
-                    <i class="bi bi-${icon} pe-2"></i><span>${text}</span>
-                </button>
-            `);
-            if (tooltip) {
-                new bootstrap.Tooltip(button);
-            }
-            $('#button-row').append(button);
-        })
-
-        for (var key in head_imgs) {
-            $(`#headline-${key}`).attr('src', `images/${head_imgs[key]}`)
-        }
-
-        demo_videos.forEach(({ source, type }) => {
-            $('#demo-video').append(`<source src="videos/${source}" type="${type}" />`)
-        })
-
-        $('#university-title').text(universities['title']);
-        universities['logos'].forEach((logo) => {
-            $('#university-logo-row').append(`<img src="/images/university_logos/${logo}" class="university-logo">`)
-        })
-        $('#university-note').text(universities['note']);
-
-        render_highlight_row(highlights, 'function-row', 'function-col');
-    })
-
-    $('#play-btn').on('click', () => {
-        $('#video-overlay').removeClass('d-none');
-        $('#video-overlay').addClass('d-flex');
-        $('#demo-video').trigger('play');
-    })
-
-    $('#close-video-btn').on('click', () => {
-        $('#video-overlay').addClass('d-none');
-        $('#video-overlay').removeClass('d-flex');
-        $('#demo-video').trigger('pause');
-    })
-</script>
+</html>
