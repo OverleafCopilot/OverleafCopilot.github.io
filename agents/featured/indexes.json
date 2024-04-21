@@ -8,7 +8,20 @@
         "source": "https://www.overleafcopilot.com/agents/featured/ext-rewriter.xml",
         "image": "https://www.overleafcopilot.com/agents/featured/ext-rewriter.gif",
         "private": false,
-        "version": "0.5.16",
+        "version": "0.5.19",
+        "require": "0.5.19",
         "contact": "qq group: 314373462"
+    },
+    {
+        "name": "中文 Checker",
+        "icon": "mdi-text-search-variant",
+        "desc": "中文语法检查器，基于AI探测语法错误。",
+        "level": 0,
+        "author": "NyaMisty",
+        "source": "https://www.overleafcopilot.com/agents/featured/chinese-checker.xml",
+        "private": false,
+        "version": "0.0.1",
+        "require": "0.5.19",
+        "contact": "QQ Group: 314373462"
     }
 ]

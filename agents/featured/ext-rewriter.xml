@@ -1,4 +1,4 @@
-<agent name="Extended Rewriter">
+<create-agent name="Extended Rewriter">
 	<icon mdi="text-box-edit-outline" />
 	<desc>
 		Enhanced Academic Rewriter
@@ -6,39 +6,40 @@
 	<model temperature="0.7">
 		gpt-3.5-turbo
 	</model>
-	<preset>
+	<layout>
 		<workspace>
-			<toolbar>
-				<actions>
-					<action>
-						<icon mdi="cursor-text" />
-						<desc>
-							Switch Rich Area Mode
-						</desc>
-						<func>
-							<fire event="richarea.switch" />
-						</func>
-					</action>
-					<action preset="clear" />
-					<action preset="copy" />
-				</actions>
-			</toolbar>
-			<richarea mode="render" switch="richarea.switch" />
-			<inputarea>
-				<label>
-					Additional Requirements
-				</label>
-			</inputarea>
-			<actions>
-				<action preset="submit" bind="global.window.keydown.control.enter" present="true" />
-			</actions>
+			<vertical>
+				<toolbar>
+					<actions>
+						<action>
+							<icon mdi="cursor-text" />
+							<desc>
+								Switch Rich Area Mode
+							</desc>
+							<func>
+								<fire event="richarea.switch" />
+							</func>
+						</action>
+						<action preset="clear" />
+						<action preset="copy" />
+					</actions>
+				</toolbar>
+				<expanded>
+					<richarea mode="render" switch="richarea.switch" />
+				</expanded>
+				<inputarea>
+					<label>
+						Additional Requirements
+					</label>
+				</inputarea>
+			</vertical>
 		</workspace>
-		<bindings>
-			<keydown scope="window" key="control.alt./" present="true">
-				<fire event="richarea.switch" />
-			</keydown>
-		</bindings>
-	</preset>
+	</layout>
+	<bindings>
+		<keydown scope="window" key="control.alt./" present="true">
+			<fire event="richarea.switch" />
+		</keydown>
+	</bindings>
 	<pre-action>
 		<panel-expand />
 	</pre-action>
@@ -60,7 +61,15 @@
 		<user>
 			Here is the To-be-revised content:
 			<br />
-			<selection />
+			<replace>
+				<source>
+					<selection />
+				</source>
+				<regex flags="g">
+					(?:%.*)|(?:\bcx@.+\b)
+				</regex>
+				<target />
+			</replace>
 		</user>
 	</prompt>
 	<post-action>
@@ -77,4 +86,4 @@
 			</join-diff>
 		</render>
 	</post-action>
-</agent>
+</create-agent>

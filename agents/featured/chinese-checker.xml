@@ -1,0 +1,123 @@
+<create-agent name="中文 Checker">
+	<icon mdi="text-search-variant" />
+	<desc>
+		中文语法检查
+	</desc>
+	<model temperature="0.7">
+		gpt-3.5-turbo-16k
+	</model>
+	<def>
+		<render-diff>
+			<join-diff format="html">
+				<diff unit="char">
+					<!-- 必须是char，因为word模式没法匹配 -->
+					<source>
+						<replace>
+							<source>
+								<input />
+							</source>
+							<regex flags="g">
+								(?:%.*)|(?:\bcx@.+\b)
+							</regex>
+							<target />
+						</replace>
+					</source>
+					<target>
+						<output />
+					</target>
+				</diff>
+			</join-diff>
+		</render-diff>
+	</def>
+	<layout>
+		<workspace>
+			<vertical>
+				<toolbar>
+					<actions>
+						<action preset="clear" />
+						<action preset="copy" />
+					</actions>
+				</toolbar>
+				<expanded>
+					<richarea mode="render" />
+				</expanded>
+			</vertical>
+		</workspace>
+	</layout>
+	<on-init>
+		<set addr="usingGPT4">
+			strIncludes(
+			<current-model />
+			.model, 'gpt-4')
+		</set>
+	</on-init>
+	<prompt xmlns:x="addons">
+		<system x:if="memory.usingGPT4">
+			你是一个专业的语法检查器，用于检查语法错误和错别字。你会接收我的输入并自动更正它。以下是几个要求：
+			
+			如果我的输入在语法上是正确且流畅的，且不包含任何错别字，只需返回正确的文本 '__none__' 。
+			如果我的输入不符合语法规范或包含错别字，你应该纠正它并返回更正后的文本。请注意，除了更正后的文本之外，你不应返回任何其他文本。
+			以下是我的输入：
+		</system>
+		<system x:else="">
+			你是一个专业的语法检查器，用于检查语法错误和错别字。你会接收我的输入并自动更正它。以下是几个要求：
+			
+			如果我的输入在语法上是正确且流畅的，且不包含任何错别字，只需返回正确的文本 '__none__' 。
+			如果我的输入不符合语法规范或包含错别字，你应该纠正它并返回更正后的文本。请注意，除了更正后的文本之外，你不应返回任何其他文本。
+			以下是我的输入：
+		</system>
+		<user>
+			<replace>
+				<source>
+					<input />
+				</source>
+				<regex flags="g">
+					(?:%.*)|(?:\bcx@.+\b)
+				</regex>
+				<target />
+			</replace>
+		</user>
+		<tools x:if="memory.usingGPT4">
+			<function name="no-grammar-changes">
+				<desc>
+					Call me if no grammar changes needed
+				</desc>
+				<action>
+					<set addr="changes">
+						false
+					</set>
+				</action>
+			</function>
+		</tools>
+	</prompt>
+	<pre-action>
+		<set addr="changes">
+			true
+		</set>
+		<panel-expand />
+	</pre-action>
+	<post-action xmlns:x="addons">
+		<if cond="memory.usingGPT4">
+			<render x:if="memory.changes">
+				<render-diff />
+			</render>
+			<render x:else="">
+				No grammar mistakes found.
+			</render>
+		</if>
+		<else>
+			<render>
+				<if type="text">
+					<condition>
+						<output />
+						== '__none__'
+					</condition>
+					No grammar mistakes found.
+				</if>
+				<else>
+					<render-diff />
+				</else>
+			</render>
+		</else>
+	</post-action>
+</create-agent>
