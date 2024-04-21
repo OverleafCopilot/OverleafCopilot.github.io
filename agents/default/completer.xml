@@ -1,0 +1,97 @@
+<create-agent name="Completer">
+	<icon mdi="draw-pen" />
+	<desc>
+		Complete the next sentence
+	</desc>
+	<model temperature="0.7" max-tokens="2000">
+		gpt-3.5-turbo
+	</model>
+	<on-init>
+		<set addr="isMac">
+			<platform-info />
+			.os == 'mac'
+		</set>
+		<log>
+			Platform detected:
+			<expr>
+				memory.isMac ? 'Mac' : 'Windows/Linux'
+			</expr>
+		</log>
+	</on-init>
+	<def>
+		<start-completion>
+			<set addr="waiting">
+				true
+			</set>
+			<delay>
+				<let vars="symbols">
+					symbols = ['.' , '..' , '...']
+				</let>
+				<for init="i = 0" cond="memory.waiting and i &lt;30" post="i = i + 1">
+					<insert-suggestion>
+						<expr>
+							symbols[i % 3]
+						</expr>
+					</insert-suggestion>
+					<sleep time="150" />
+				</for>
+				<if cond="memory.waiting">
+					<clear-suggestion />
+				</if>
+			</delay>
+			<submit />
+		</start-completion>
+	</def>
+	<layout xmlns:x="addons">
+		<workspace>
+			<vertical>
+				<toolbar>
+				</toolbar>
+				<expanded>
+					<centered>
+						<span x:if="memory.isMac">
+							Press Command+Control+O to trigger the completion and Command+Control+P to accept the suggestion.
+						</span>
+						<span x:else="">
+							Press Ctrl+Alt+A to trigger the completion and Ctrl+Alt+D to accept the suggestion.
+						</span>
+					</centered>
+				</expanded>
+			</vertical>
+		</workspace>
+	</layout>
+	<bindings xmlns:x="addons">
+		<keydown x:if="memory.isMac" scope="window" key="command.control.o" present="false">
+			<start-completion />
+		</keydown>
+		<keydown x:else="" scope="window" key="control.alt.a" present="false">
+			<start-completion />
+		</keydown>
+		<keydown x:if="memory.isMac" scope="window" key="command.control.p" present="false">
+			<accept-suggestion />
+		</keydown>
+		<keydown x:else="" scope="window" key="control.alt.d" present="false">
+			<accept-suggestion />
+		</keydown>
+	</bindings>
+	<prompt>
+		<system>
+			I hope you act like a professional academic writer.
+			I want you to continue the [pre-text] of the academic paper in LaTeX below (complete one sentence is enough), making sure to maintain semantic continuity and consistency with [pre-text].
+			Don't return anything besides the continued sentence.
+		</system>
+		<user>
+			[pre-text]:
+			<br />
+			<select offset="-10" length="10" unit="sentence" />
+		</user>
+	</prompt>
+	<post-action stream="true">
+		<set addr="waiting">
+			false
+		</set>
+		<insert-suggestion>
+			<output accumulation="true" />
+		</insert-suggestion>
+	</post-action>
+</create-agent>

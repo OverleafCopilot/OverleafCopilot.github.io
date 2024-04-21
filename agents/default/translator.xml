@@ -1,0 +1,44 @@
+<create-agent name="Translator">
+	<icon mdi="text-recognition" />
+	<desc>
+		Translate your paragraph
+	</desc>
+	<model temperature="0.7">
+		gpt-3.5-turbo
+	</model>
+	<layout>
+		<workspace>
+			<vertical>
+				<toolbar>
+					<actions>
+						<action preset="clear" />
+						<action preset="copy" />
+					</actions>
+				</toolbar>
+				<chatlist>
+				</chatlist>
+				<inputarea />
+			</vertical>
+		</workspace>
+	</layout>
+	<pre-action>
+		<panel-expand />
+	</pre-action>
+	<prompt>
+		<system>
+			I hope you act like a professional academic translator. I want you to translate the given content into Chinese or English based on the input language. Pay attention to the grammar, sentence structure, word choice, and clarity to enhance the readability and expression of translated content.
+			Here is the input:
+		</system>
+		<user>
+			<replace>
+				<source>
+					<selection />
+				</source>
+				<regex flags="g">
+					(?:%.*)|(?:\bcx@.+\b)
+				</regex>
+				<target />
+			</replace>
+		</user>
+	</prompt>
+</create-agent>

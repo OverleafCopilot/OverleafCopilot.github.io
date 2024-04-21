@@ -1,0 +1,120 @@
+<create-agent name="Checker">
+	<icon mdi="text-search-variant" />
+	<desc>
+		Grammar Checker
+	</desc>
+	<model temperature="0.7">
+		gpt-3.5-turbo
+	</model>
+	<def>
+		<render-diff>
+			<join-diff format="html">
+				<diff unit="word">
+					<source>
+						<replace>
+							<source>
+								<input />
+							</source>
+							<regex flags="g">
+								(?:%.*)|(?:\bcx@.+\b)
+							</regex>
+							<target />
+						</replace>
+					</source>
+					<target>
+						<output />
+					</target>
+				</diff>
+			</join-diff>
+		</render-diff>
+	</def>
+	<layout>
+		<workspace>
+			<vertical>
+				<toolbar>
+					<actions>
+						<action preset="clear" />
+						<action preset="copy" />
+					</actions>
+				</toolbar>
+				<expanded>
+					<richarea mode="render" />
+				</expanded>
+			</vertical>
+		</workspace>
+	</layout>
+	<on-init>
+		<set addr="usingGPT4">
+			strIncludes(
+			<current-model />
+			.model, 'gpt-4')
+		</set>
+	</on-init>
+	<prompt xmlns:x="addons">
+		<system x:if="memory.usingGPT4">
+			You are an expert grammar checker in English that looks for grammar mistakes. You take all the my input and auto correct it. Here are a few requirements:
+			1. If the my input is grammatically correct and fluent, just call the no-grammar-changes function and return nothing.
+			2. If the my input is not grammatically correct, you should correct it and return the corrected text. Note that you should NOT return any text besides the corrected text.
+			Here is my input:
+		</system>
+		<system x:else="">
+			You are an expert grammar checker in English that looks for grammar mistakes. You take all the my input and auto correct it. Here are a few requirements:
+			1. If the my input is grammatically correct and fluent, just return me the right text '__none__'
+			2. If the my input is not grammatically correct, you should correct it and return the corrected text. Note that you should NOT return any text besides the corrected text.
+			Here is my input:
+		</system>
+		<user>
+			<replace>
+				<source>
+					<input />
+				</source>
+				<regex flags="g">
+					(?:%.*)|(?:\bcx@.+\b)
+				</regex>
+				<target />
+			</replace>
+		</user>
+		<tools x:if="memory.usingGPT4">
+			<function name="no-grammar-changes">
+				<desc>
+					Call me if no grammar changes needed
+				</desc>
+				<action>
+					<set addr="changes">
+						false
+					</set>
+				</action>
+			</function>
+		</tools>
+	</prompt>
+	<pre-action>
+		<set addr="changes">
+			true
+		</set>
+		<panel-expand />
+	</pre-action>
+	<post-action xmlns:x="addons">
+		<if cond="memory.usingGPT4">
+			<render x:if="memory.changes">
+				<render-diff />
+			</render>
+			<render x:else="">
+				No grammar mistakes found.
+			</render>
+		</if>
+		<else>
+			<render>
+				<if type="text">
+					<condition>
+						<output />
+						== '__none__'
+					</condition>
+					No grammar mistakes found.
+				</if>
+				<else>
+					<render-diff />
+				</else>
+			</render>
+		</else>
+	</post-action>
+</create-agent>
