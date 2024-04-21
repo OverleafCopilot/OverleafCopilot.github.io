@@ -7,7 +7,7 @@
         "author": "The Overleaf Copilot Team",
         "source": "file://agents/rewriter.xml",
         "private": true,
-        "version": "0.5.15",
+        "version": "latest",
         "contact": "QQ Group: 314373462"
     },
     {
@@ -18,7 +18,7 @@
         "author": "The Overleaf Copilot Team",
         "source": "file://agents/translator.xml",
         "private": true,
-        "version": "0.5.15",
+        "version": "latest",
         "contact": "QQ Group: 314373462"
     },
     {
@@ -29,7 +29,7 @@
         "author": "The Overleaf Copilot Team",
         "source": "file://agents/checker.xml",
         "private": true,
-        "version": "0.5.15",
+        "version": "latest",
         "contact": "QQ Group: 314373462"
     },
     {
@@ -40,7 +40,7 @@
         "author": "The Overleaf Copilot Team",
         "source": "file://agents/adviser.xml",
         "private": true,
-        "version": "0.5.15",
+        "version": "latest",
         "contact": "QQ Group: 314373462"
     },
     {
@@ -51,7 +51,7 @@
         "author": "The Overleaf Copilot Team",
         "source": "file://agents/completer.xml",
         "private": true,
-        "version": "0.5.15",
+        "version": "latest",
         "contact": "QQ Group: 314373462"
     }
 ]
