@@ -23,5 +23,16 @@
         "version": "0.0.1",
         "require": "0.5.19",
         "contact": "QQ Group: 314373462"
+    },
+    {
+        "name": "Completer",
+        "icon": "mdi-draw-pen",
+        "desc": "Sentence Completer: Complete or extend your sentences with context-aware suggestions.",
+        "level": 0,
+        "author": "The Overleaf Copilot Team",
+        "source": "file://agents/completer.xml",
+        "private": true,
+        "version": "latest",
+        "contact": "QQ Group: 314373462"
     }
 ]
