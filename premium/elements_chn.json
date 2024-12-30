@@ -56,7 +56,7 @@
             ],
             "button": {
                 "text": "购买",
-                "url": "https://api.overleafcopilot.com/stripe/create-checkout-session?prefix=30dGPT3&region=CHN",
+                "url": "https://www.promptgallery.cn/create-checkout-session?prefix=30dGPT3&region=CHN",
                 "style": "primary",
                 "tooltip": "使用微信或支付宝支付",
                 "type": "POST"
@@ -84,7 +84,7 @@
             ],
             "button": {
                 "text": "购买",
-                "url": "https://api.overleafcopilot.com/stripe/create-checkout-session?prefix=30dGPT4&region=CHN",
+                "url": "https://www.promptgallery.cn/create-checkout-session?prefix=30dGPT4&region=CHN",
                 "style": "warning",
                 "tooltip": "使用微信或支付宝支付",
                 "type": "POST"
