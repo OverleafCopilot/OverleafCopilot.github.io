@@ -56,7 +56,7 @@
             ],
             "button": {
                 "text": "Buy",
-                "url": "https://api.overleafcopilot.com/stripe/create-checkout-session?prefix=30dGPT3&region=USA",
+                "url": "https://www.promptgallery.cn/create-checkout-session?prefix=30dGPT3&region=USA",
                 "style": "primary",
                 "tooltip": "Pay with Stripe",
                 "type": "POST"
@@ -84,7 +84,7 @@
             ],
             "button": {
                 "text": "Buy",
-                "url": "https://api.overleafcopilot.com/stripe/create-checkout-session?prefix=30dGPT4&region=USA",
+                "url": "https://www.promptgallery.cn/create-checkout-session?prefix=30dGPT4&region=USA",
                 "style": "warning",
                 "tooltip": "Pay with Stripe",
                 "type": "POST"
